@@ -220,4 +220,29 @@ public class UserServices {
         }
           return Newlogin;
     }
+     public User getById(int id) {
+         User t = new User();
+        
+        try {
+            String req = ("Select * from `client` WHERE id = " + id);
+            Statement st = cnx.createStatement();
+            ResultSet rs = st.executeQuery(req);
+           
+            rs.next();
+                
+                t.setId(rs.getInt("id"));
+                t.setNom(rs.getString("nom"));
+                t.setEmail(rs.getString("email"));
+                t.setPassword(rs.getString("password"));
+                t.setRoles(rs.getString("roles"));
+               
+                
+            
+            
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return t;
+    }
 }
