@@ -9,19 +9,28 @@ package edu.thetakeaway.entities;
  * @author rafrafi
  */
 public class Carte {
-    int id,userid;
-    String numero,nomcomplet,datexp,cvv;
+    int id;
+    private String numero,nomcomplet,datexp,cvv;
+    private User userid;
 
     public Carte() {
     }
 
-    public Carte(int id, int userid, String numero, String nomcomplet, String datexp, String cvv) {
+    public Carte(int id, String numero, String nomcomplet, String datexp, String cvv, User userid) {
         this.id = id;
-        this.userid = userid;
         this.numero = numero;
         this.nomcomplet = nomcomplet;
         this.datexp = datexp;
         this.cvv = cvv;
+        this.userid = userid;
+    }
+
+    public Carte(String numero, String nomcomplet, String datexp, String cvv, User userid) {
+        this.numero = numero;
+        this.nomcomplet = nomcomplet;
+        this.datexp = datexp;
+        this.cvv = cvv;
+        this.userid = userid;
     }
 
     public Carte(String numero, String nomcomplet, String datexp, String cvv) {
@@ -37,14 +46,6 @@ public class Carte {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public int getUserid() {
-        return userid;
-    }
-
-    public void setUserid(int userid) {
-        this.userid = userid;
     }
 
     public String getNumero() {
@@ -79,10 +80,23 @@ public class Carte {
         this.cvv = cvv;
     }
 
+    public User getUserid() {
+        return userid;
+    }
+
+    public void setUserid(User userid) {
+        this.userid = userid;
+    }
+
     @Override
     public String toString() {
-        return "Carte{" + "id=" + id + ", userid=" + userid + ", numero=" + numero + ", nomcomplet=" + nomcomplet + ", datexp=" + datexp + ", cvv=" + cvv + '}';
+        return "Carte{" + "id=" + id + ", numero=" + numero + ", nomcomplet=" + nomcomplet + ", datexp=" + datexp + ", cvv=" + cvv + ", userid=" + userid + '}';
     }
     
+    
+
+  
+    
+   
     
 }
