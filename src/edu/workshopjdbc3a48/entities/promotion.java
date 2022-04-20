@@ -34,14 +34,17 @@ public class promotion {
         this.element_id = element_id;
     }
 
-    public promotion(int id, Date date_debut, Date date_fin, Date heure_debut, Date heure_fin, String banner) {
-        this.id = id;
+    public promotion(int element_id, Date date_debut, Date date_fin, Date heure_debut, Date heure_fin, String banner, int prix_promo) {
+        this.element_id = element_id;
         this.date_debut = date_debut;
         this.date_fin = date_fin;
         this.heure_debut = heure_debut;
         this.heure_fin = heure_fin;
         this.banner = banner;
+        this.prix_promo = prix_promo;
     }
+
+  
 
     public int getId() {
         return id;

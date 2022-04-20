@@ -33,13 +33,17 @@ public class menu_element {
     }
 
     public menu_element(int prix, String nom, String description, String categorie, String image, array options) {
-        this.prix = prix;
+      
         this.nom = nom;
         this.description = description;
         this.categorie = categorie;
-        this.image = image;
+        this.prix = prix;
         this.options = options;
+        this.image = image;
+      
     }
+
+
 
     public int getId() {
         return id;

@@ -5,6 +5,7 @@
  */
 package edu.workshopjdbc3a48.entities;
 
+import java.sql.Array;
 import java.sql.Date;
 
 /**
@@ -12,18 +13,19 @@ import java.sql.Date;
  * @author Bouga
  */
 public class Restaurant {
-    private int id,telephone;
-    private String nom , adresse , description , architecture ;
-    private Date heure_ouverture,heure_fermeture;
-    private array images;
+    private int id;
+    private String nom ; 
+    private String   adresse ;
+    private String description ;
+    private String   architecture ;
+    private Date heure_ouverture ;
+    private Date      heure_fermeture;
+    private int telephone ; 
+    private Array images ;
 
-    private static class array {
+   
 
-        public array() {
-        }
-    }
-
-    public Restaurant(int id, int telephone, String nom, String adresse, String description, String architecture, Date heure_ouverture, Date heure_fermeture, array images) {
+    public Restaurant(int id, int telephone, String nom, String adresse, String description, String architecture, Date heure_ouverture, Date heure_fermeture, Array images) {
         this.id = id;
         this.telephone = telephone;
         this.nom = nom;
@@ -34,16 +36,23 @@ public class Restaurant {
         this.heure_fermeture = heure_fermeture;
         this.images = images;
     }
+    public Restaurant(){
+        
+    }
 
-    public Restaurant(int telephone, String nom, String adresse, String description, Date heure_ouverture, Date heure_fermeture) {
-        this.telephone = telephone;
+    public Restaurant(int telephone, String nom, String adresse, String description, String architecture, Date heure_ouverture, Date heure_fermeture, Array images) {
+       
         this.nom = nom;
         this.adresse = adresse;
         this.description = description;
+        this.architecture = architecture;
         this.heure_ouverture = heure_ouverture;
         this.heure_fermeture = heure_fermeture;
+         this.telephone = telephone;
+        this.images = images;
     }
 
+   
     public int getId() {
         return id;
     }
@@ -108,11 +117,11 @@ public class Restaurant {
         this.heure_fermeture = heure_fermeture;
     }
 
-    public array getImages() {
+    public Array getImages() {
         return images;
     }
 
-    public void setImages(array images) {
+    public void setImages(Array images) {
         this.images = images;
     }
 
@@ -120,6 +129,8 @@ public class Restaurant {
     public String toString() {
         return "Restaurant{" + "id=" + id + ", telephone=" + telephone + ", nom=" + nom + ", adresse=" + adresse + ", description=" + description + ", architecture=" + architecture + ", heure_ouverture=" + heure_ouverture + ", heure_fermeture=" + heure_fermeture + ", images=" + images + '}';
     }
+
+   
     
     
     
