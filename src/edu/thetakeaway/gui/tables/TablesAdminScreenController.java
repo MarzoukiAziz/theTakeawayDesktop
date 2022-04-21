@@ -1,5 +1,4 @@
 package edu.thetakeaway.gui.tables;
-
 import edu.thetakeaway.entities.Restaurant;
 import java.io.IOException;
 import java.net.URL;
@@ -199,7 +198,10 @@ public class TablesAdminScreenController implements Initializable {
     private void navigateToReservations(ActionEvent actionEvent) {
         navigateTo(actionEvent, "../reservations/ReservationsAdminScreen.fxml");
     }
-
+    @FXML
+    private void navigateToDashboard(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../dashboard/AdminDashboardScreen.fxml");
+    }
     @FXML
     private void navigateToNewTable(ActionEvent actionEvent) {
         if (restaurantPicker.getValue() == null) {

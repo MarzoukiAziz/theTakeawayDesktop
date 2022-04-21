@@ -12,7 +12,7 @@ public class SharedData {
     public static Restaurant selectedRestaurant;
     public static ArrayList<Integer> tablesNumber;
     public static Table selectedTable;
-    public static User currentUser= new User(3);
+    public static User currentUser= new User(4);
     public static Boolean pickMapXY=false;
     public static Restaurant selectedRestaurantForReserve= new Restaurant(2,"Rades");
     public static Reservation preparedReservation;

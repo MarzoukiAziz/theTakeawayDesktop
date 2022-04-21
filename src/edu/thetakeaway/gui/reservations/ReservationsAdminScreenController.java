@@ -180,6 +180,11 @@ public class ReservationsAdminScreenController implements Initializable {
     private void navigateToReservations(ActionEvent actionEvent) {
         navigateTo(actionEvent, "ReservationsAdminScreen.fxml");
     }
+    
+    @FXML
+    private void navigateToDashboard(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../dashboard/AdminDashboardScreen.fxml");
+    }
 
     private void navigateTo(ActionEvent actionEvent, String path) {
         try {

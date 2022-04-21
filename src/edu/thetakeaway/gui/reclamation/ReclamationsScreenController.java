@@ -95,7 +95,23 @@ public class ReclamationsScreenController implements Initializable {
         statutCl.setCellValueFactory(new PropertyValueFactory<>("statut"));
         table.setItems(recData);
     }
-
+   @FXML
+    private void navigateToReclamations(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "ReclamationsScreen.fxml");
+    }
+    @FXML
+    private void navigateToDashboard(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../dashboard/UserDashboardScreen.fxml");
+    }
+    @FXML
+    private void navigateToReserve(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../reservations/ReserveScreen.fxml");
+    }
+    @FXML
+    private void navigateToReservations(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../reservations/ReservationsScreen.fxml");
+    }
+    
     
   @FXML
     private void navigateToNewReclamations(ActionEvent actionEvent) {

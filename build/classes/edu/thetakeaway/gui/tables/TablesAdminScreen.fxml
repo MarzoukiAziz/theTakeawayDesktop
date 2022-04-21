@@ -28,7 +28,7 @@
             <VBox prefHeight="616.0" prefWidth="89.0" style="-fx-background-color: #131022; -fx-background-radius: 15 0 0 15;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <Pane prefHeight="79.0" prefWidth="97.0" style="-fx-background-radius: 15 0 15 15;" />
-                  <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="66.0" prefWidth="94.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Tableau de Board" textFill="#a868a0" wrapText="true">
+                  <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#navigateToDashboard" prefHeight="66.0" prefWidth="94.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Tableau de Board" textFill="#a868a0" wrapText="true">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>

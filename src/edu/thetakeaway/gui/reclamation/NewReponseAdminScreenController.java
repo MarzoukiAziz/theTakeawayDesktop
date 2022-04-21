@@ -1,4 +1,3 @@
-
 package edu.thetakeaway.gui.reclamation;
 
 import edu.thetakeaway.entities.Reponse;
@@ -16,7 +15,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
@@ -34,23 +35,30 @@ public class NewReponseAdminScreenController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-
-     
-    @FXML
-    private void addReponse(ActionEvent actionevent){
-        ReponseService rp = new ReponseService();
-        Date d = new Date(System.currentTimeMillis());
-        Time t= new Time(System.currentTimeMillis());
-        Reponse reponse = new Reponse(SharedData.selectedReclamation, SharedData.currentUser, reponseText.getText(), d,t);
-        rp.ajouter(reponse);
-        navigateReclamationDetails(actionevent);
     }
-    
+
     @FXML
-    private void resetText(ActionEvent actionevent){
+    private void addReponse(ActionEvent actionevent) {
+        if (reponseText.getText().length() < 10) {
+            Alert a = new Alert(Alert.AlertType.ERROR, "Le réponse doit contenir au moins 10 caractéres!", ButtonType.APPLY.OK);
+            a.setHeaderText("Réponse Invalide");
+            a.setTitle("Error");
+            a.showAndWait();
+        } else {
+            ReponseService rp = new ReponseService();
+            Date d = new Date(System.currentTimeMillis());
+            Time t = new Time(System.currentTimeMillis());
+            Reponse reponse = new Reponse(SharedData.selectedReclamation, SharedData.currentUser, reponseText.getText(), d, t);
+            rp.ajouter(reponse);
+            navigateReclamationDetails(actionevent);
+        }
+    }
+
+    @FXML
+    private void resetText(ActionEvent actionevent) {
         reponseText.setText("");
     }
+
     @FXML
     private void navigateReclamationDetails(ActionEvent actionEvent) {
         navigateTo(actionEvent, "ReclamationDetailsAdminScreen.fxml");
@@ -67,5 +75,5 @@ public class NewReponseAdminScreenController implements Initializable {
 
         }
     }
-    
+
 }

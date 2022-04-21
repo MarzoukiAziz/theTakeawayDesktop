@@ -111,6 +111,10 @@ public class ReclamationsAdminScreenController implements Initializable {
     private void navigateToTables(ActionEvent event) {
     }
     
+     @FXML
+    private void navigateToDashboard(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../dashboard/AdminDashboardScreen.fxml");
+    }
     private void navigateTo(ActionEvent actionEvent, String path) {
         try {
             Parent exercices_parent = FXMLLoader.load(getClass().getResource(path));

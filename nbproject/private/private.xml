@@ -3,11 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/marzo/Desktop/PiDevJava/src/edu/thetakeaway/gui/reservations/ReservationsAdminScreenController.java</file>
+            <file>file:/C:/Users/marzo/Desktop/PiDevJava/src/edu/thetakeaway/entities/Reclamation.java</file>
+            <file>file:/C:/Users/marzo/Desktop/PiDevJava/src/edu/thetakeaway/gui/tables/AddTableAdminScreenController.java</file>
             <file>file:/C:/Users/marzo/Desktop/PiDevJava/src/edu/thetakeaway/tests/MainJAVAFx.java</file>
-            <file>file:/C:/Users/marzo/Desktop/PiDevJava/src/edu/thetakeaway/gui/dashboard/UserDashboardScreen.fxml</file>
-            <file>file:/C:/Users/marzo/Desktop/PiDevJava/src/edu/thetakeaway/gui/reclamation/AddReclamationScreenController.java</file>
             <file>file:/C:/Users/marzo/Desktop/PiDevJava/src/edu/thetakeaway/gui/dashboard/UserDashboardScreenController.java</file>
-            <file>file:/C:/Users/marzo/Desktop/PiDevJava/src/edu/thetakeaway/gui/reclamation/ReclamationsScreenController.java</file>
+            <file>file:/C:/Users/marzo/Desktop/PiDevJava/src/edu/thetakeaway/gui/reclamation/NewReponseScreenController.java</file>
+            <file>file:/C:/Users/marzo/Desktop/PiDevJava/src/edu/thetakeaway/gui/tables/TablesAdminScreenController.java</file>
+            <file>file:/C:/Users/marzo/Desktop/PiDevJava/src/edu/thetakeaway/gui/dashboard/AdminDashboardScreen.fxml</file>
+            <file>file:/C:/Users/marzo/Desktop/PiDevJava/src/edu/thetakeaway/services/ReclamationService.java</file>
+            <file>file:/C:/Users/marzo/Desktop/PiDevJava/src/edu/thetakeaway/gui/reclamation/NewReponseAdminScreenController.java</file>
+            <file>file:/C:/Users/marzo/Desktop/PiDevJava/src/edu/thetakeaway/gui/reclamation/ReclamationsAdminScreenController.java</file>
+            <file>file:/C:/Users/marzo/Desktop/PiDevJava/src/edu/thetakeaway/utils/SharedData.java</file>
+            <file>file:/C:/Users/marzo/Desktop/PiDevJava/src/edu/thetakeaway/gui/dashboard/AdminDashboardScreenController.java</file>
         </group>
     </open-files>
 </project-private>

@@ -100,7 +100,23 @@ public class ReclamationDetailsScreenController implements Initializable {
     private void navigateNewReponse(ActionEvent actionEvent) {
         navigateTo(actionEvent, "NewReponseScreen.fxml");
     }
-
+   @FXML
+    private void navigateToReclamations(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "ReclamationsScreen.fxml");
+    }
+    @FXML
+    private void navigateToDashboard(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../dashboard/UserDashboardScreen.fxml");
+    }
+    @FXML
+    private void navigateToReserve(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../reservations/ReserveScreen.fxml");
+    }
+    @FXML
+    private void navigateToReservations(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../reservations/ReservationsScreen.fxml");
+    }
+    
     private void navigateTo(ActionEvent actionEvent, String path) {
         try {
             Parent exercices_parent = FXMLLoader.load(getClass().getResource(path));
