@@ -7,6 +7,7 @@ package edu.thetakeaway.services;
 import edu.thetakeaway.entities.Carte;
 import edu.thetakeaway.entities.User;
 import edu.thetakeaway.utils.DataSource;
+import static java.lang.String.valueOf;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -33,7 +34,7 @@ public class CarteService implements IService<Carte> {
             ps.setString(3, t.getNomcomplet() + "");
             ps.setString(4, t.getDatexp() + "");
             ps.setString(5, t.getCvv() + "");
-            ps.setString(5, t.getUserid().getId() + "");
+            ps.setString(6, t.getUserid().getId() + "");
             ps.executeUpdate();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -86,6 +87,7 @@ public class CarteService implements IService<Carte> {
     }
     public Carte getById(int id){
         int k;
+        String m;
         Carte t = new Carte();
         try {
             String req = ("Select * from `cart_bancaire` WHERE id = " + id);
@@ -99,10 +101,7 @@ public class CarteService implements IService<Carte> {
                 t.setNomcomplet(rs.getString("nomcomplet"));
                 t.setDatexp(rs.getString("datexp"));
                 t.setCvv(rs.getString("cvv"));
-                k=rs.getInt("userid");
                 
-                t.setCvv();
-               
                 
             
             

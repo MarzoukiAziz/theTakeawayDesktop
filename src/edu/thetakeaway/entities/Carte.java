@@ -25,6 +25,14 @@ public class Carte {
         this.userid = userid;
     }
 
+    public Carte(int id, String numero, String nomcomplet, String datexp, String cvv) {
+        this.id = id;
+        this.numero = numero;
+        this.nomcomplet = nomcomplet;
+        this.datexp = datexp;
+        this.cvv = cvv;
+    }
+
     public Carte(String numero, String nomcomplet, String datexp, String cvv, User userid) {
         this.numero = numero;
         this.nomcomplet = nomcomplet;

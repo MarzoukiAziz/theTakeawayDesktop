@@ -36,16 +36,25 @@ public class SignupController {
     
     @FXML
     private TextField UsernameTF;
+    
+    
     @FXML
     private TextField EmailTF;
     @FXML
     private TextField PasswordTF;
+    
+    @FXML
+    private TextField EmailLogin;
+    
+    @FXML
+    private TextField PassLogin;
 
 
     /**
      * Initializes the controller class.
      */
        Connection cnx = DataSource.getInstance().getCnx();
+       UserServices su = new UserServices();
     @FXML
     private Label ErrorLabel;
 
@@ -98,6 +107,53 @@ public class SignupController {
       }
     }
 
+@FXML
+    public  void LoginUser(ActionEvent event) throws SQLException, IOException {
+        
+      if(EmailLogin.getText()=="")
+      {
+          ErrorLabel.setText("Le Email est Obligatoire");
+      
+      }else if (PassLogin.getText()=="")
+      {
+          ErrorLabel.setText("L'Motdepass est obligatoire! ");
+      }
+      else {
+          User utilisateur = new User();
+            UserServices nu = new UserServices();
+           
+                utilisateur.setEmail(EmailLogin.getText());
+                utilisateur.setPassword(PassLogin.getText());
+                String Email=utilisateur.getEmail();
+                String Pass=utilisateur.getPassword();
+                
+                
+               
+                
+                if((nu.existeMail(utilisateur)==0)&&(nu.verifPassword(Email,Pass)==true)){
+                       FXMLLoader loader = new FXMLLoader(getClass().getResource("../gui/Signup.fxml"));
+           Parent root = (Parent) loader.load();
+           Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+           stage.setUserData(utilisateur);
+           // SignUp2Controller signUp2Controller=loader.getController();
+           //   signUp2Controller.returnUser(LoginTextField1.getText());
+           //  signUp2Controller.show(LoginTextField1.getText());
+           Scene scene = new Scene(root);
+           stage.setScene(scene);
+           stage.show();
+                }
+                   else if (nu.existeMail(utilisateur)!=0)
+       {
+           ErrorLabel.setText("L'adresse email ne existe pas");
+       }else if (nu.verifPassword(Email,Pass)==false)
+       {
+           ErrorLabel.setText("le Mot de pass est faux!");
+
+       }
+    
+            
+      }
+    }
     
     
 }
