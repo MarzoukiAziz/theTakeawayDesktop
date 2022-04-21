@@ -10,6 +10,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class TableService implements IService<Table> {
 
@@ -62,7 +64,7 @@ public class TableService implements IService<Table> {
             Statement st = cnx.createStatement();
             ResultSet rs = st.executeQuery(req);
             while (rs.next()) {
-                Restaurant r = new Restaurant();
+                Restaurant r = new Restaurant(rs.getInt("restaurant_id"),rs.getString("restaurant.nom"));
                 //find restaurant later with rs.getInt("restaurant_id_id")
                 Table t = new Table(rs.getInt("id"), rs.getInt("pos_x"), rs.getInt("pos_y"), rs.getInt("nb_palces"), rs.getInt("numero"), r);
                 list.add(t);
@@ -79,12 +81,11 @@ public class TableService implements IService<Table> {
             String req = "Select * from `table` WHERE id = " + id;
             Statement st = cnx.createStatement();
             ResultSet rs = st.executeQuery(req);
-            Restaurant r = new Restaurant();
+            
             rs.next();
-            //find restaurant later with rs.getInt("restaurant_id_id")
-             t = new Table(rs.getInt("id"), rs.getInt("pos_x"), rs.getInt("pos_y"), rs.getInt("nb_palces"), rs.getInt("numero"), r);
+             t = new Table(rs.getInt("id"), rs.getInt("pos_x"), rs.getInt("pos_y"), rs.getInt("nb_palces"), rs.getInt("numero"), new Restaurant(rs.getInt("restaurant_id_id"),""));
 
-        } catch (SQLException ex) {
+        } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
         return t;
@@ -98,6 +99,22 @@ public class TableService implements IService<Table> {
             ResultSet rs = st.executeQuery(req);
             while (rs.next()) {
                 list.add(getById(rs.getInt("table_id")));
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return list;
+    }
+    public ArrayList<Table> getTablesByRestaurant(Restaurant r) {
+        ArrayList<Table> list = new ArrayList<>();
+        try {
+            String req = "SELECT * FROM `table` WHERE restaurant_id_id = "+r.getId();
+            Statement st = cnx.createStatement();
+            ResultSet rs = st.executeQuery(req);
+            while (rs.next()) {
+                //find restaurant later with rs.getInt("restaurant_id_id")
+                Table t = new Table(rs.getInt("id"), rs.getInt("pos_x"), rs.getInt("pos_y"), rs.getInt("nb_palces"), rs.getInt("numero"), r);
+                list.add(t);
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());

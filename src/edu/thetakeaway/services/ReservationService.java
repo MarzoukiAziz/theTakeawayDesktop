@@ -1,6 +1,5 @@
 package edu.thetakeaway.services;
 
-import edu.thetakeaway.entities.Admin;
 import edu.thetakeaway.entities.Reservation;
 import edu.thetakeaway.entities.Restaurant;
 import edu.thetakeaway.entities.Table;
@@ -17,23 +16,36 @@ import java.time.Month;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReservationService implements IService<Reservation> {
+public class ReservationService {
 
     Connection cnx = DataSource.getInstance().getCnx();
 
     public void ajouter(Reservation r) {
         try {
-            String req = "INSERT INTO `reservation` ( `client_id_id`, `admin_charge_id`, `date`, `heure_arrive`, `heure_depart`, `nb_personne`, `statut`, `restaurant_id`) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?)";
-            PreparedStatement ps = cnx.prepareStatement(req);
+            String req = "INSERT INTO `reservation` ( `client_id_id`, `date`, `heure_arrive`, `heure_depart`, `nb_personne`, `statut`, `restaurant_id`) VALUES ( ?, ?, ?, ?, ?, ?, ?)";
+            PreparedStatement ps = cnx.prepareStatement(req,Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, r.getClient().getId() + "");
-            ps.setString(2, r.getAdminCharge().getId() + "");
-            ps.setString(3, r.getDate() + "");
-            ps.setString(4, r.getHeureArrive() + "");
-            ps.setString(5, r.getHeureDepart() + "");
-            ps.setString(6, r.getNbPersonne() + "");
-            ps.setString(7, r.getStatut() + "");
-            ps.setString(8, r.getRestaurant().getId() + "");
-            ps.executeUpdate();
+            ps.setString(2, r.getDate() + "");
+            ps.setString(3, r.getHeureArrive() + "");
+            ps.setString(4, r.getHeureDepart() + "");
+            ps.setString(5, r.getNbPersonne() + "");
+            ps.setString(6, r.getStatut() + "");
+            ps.setString(7, r.getRestaurant().getId() + "");
+
+            int affectedRows = ps.executeUpdate();
+
+            if (affectedRows == 0) {
+                throw new SQLException("Creating user failed, no rows affected.");
+            }
+
+            try (ResultSet generatedKeys = ps.getGeneratedKeys()) {
+                if (generatedKeys.next()) {
+                    r.setId(generatedKeys.getInt(1));
+                } else {
+                    throw new SQLException("Creating user failed, no ID obtained.");
+                }
+            }
+            
             addSelectedTables(r);
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -55,7 +67,6 @@ public class ReservationService implements IService<Reservation> {
         }
     }
 
-    @Override
     public void supprimer(int id) {
         try {
             String req = "DELETE FROM `reservation` WHERE id = " + id;
@@ -67,11 +78,9 @@ public class ReservationService implements IService<Reservation> {
         }
     }
 
-    @Override
     public void modifier(Reservation r) {
         try {
             String req = "UPDATE `reservation` SET `client_id_id` = '" + r.getClient().getId()
-                    + "', `admin_charge_id` = '" + r.getAdminCharge()
                     + "', `date` = '" + r.getDate()
                     + "', `heure_arrive` = '" + r.getHeureArrive()
                     + "', `heure_depart` = '" + r.getHeureDepart()
@@ -87,7 +96,58 @@ public class ReservationService implements IService<Reservation> {
         }
     }
 
-    @Override
+    public List<Reservation> getByRestaurantId(Restaurant r) {
+        List<Reservation> list = new ArrayList<>();
+        try {
+            String req = "Select * from reservation where restaurant_id = " + r.getId();
+            Statement st = cnx.createStatement();
+            ResultSet rs = st.executeQuery(req);
+            while (rs.next()) {
+                UserServices us = new UserServices();
+                User u = us.getById(rs.getInt("client_id_id"));
+                Reservation t = new Reservation(
+                        rs.getInt("id"),
+                        u,
+                        r,
+                        rs.getDate("date"),
+                        rs.getTime("heure_arrive"),
+                        rs.getTime("heure_depart"),
+                        rs.getInt("nb_personne"),
+                        rs.getString("statut"),
+                        new TableService().getTablesByReservation(rs.getInt("id")));
+                list.add(t);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return list;
+    }
+
+    public List<Reservation> getByUserId(User user) {
+        List<Reservation> list = new ArrayList<>();
+        try {
+            String req = "Select * from reservation where client_id_id = " + user.getId();
+            Statement st = cnx.createStatement();
+            ResultSet rs = st.executeQuery(req);
+            while (rs.next()) {
+                Reservation t = new Reservation(
+                        rs.getInt("id"),
+                        user,
+                        new RestaurantService().getById(rs.getInt("restaurant_id")),
+                        rs.getDate("date"),
+                        rs.getTime("heure_arrive"),
+                        rs.getTime("heure_depart"),
+                        rs.getInt("nb_personne"),
+                        rs.getString("statut"),
+                        new TableService().getTablesByReservation(rs.getInt("id")));
+                list.add(t);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return list;
+    }
+
     public List<Reservation> getAll() {
         List<Reservation> list = new ArrayList<>();
         try {
@@ -95,14 +155,11 @@ public class ReservationService implements IService<Reservation> {
             Statement st = cnx.createStatement();
             ResultSet rs = st.executeQuery(req);
             while (rs.next()) {
-                Restaurant r = new Restaurant();
+                Restaurant r = new Restaurant(1, "sdaa");
                 User u = new User();
-                Admin a = new Admin();
-                //find restaurant later with rs.getInt("restaurant_id_id")
                 Reservation t = new Reservation(
                         rs.getInt("id"),
                         u,
-                        a,
                         r,
                         rs.getDate("date"),
                         rs.getTime("heure_arrive"),

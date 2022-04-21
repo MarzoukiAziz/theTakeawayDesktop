@@ -10,21 +10,19 @@ import java.util.Objects;
 public class Reservation {
     private int id;
     private User client;
-    private Admin adminCharge;
     private Restaurant restaurant;
     private Date date;
     private Time heureArrive;
     private Time heureDepart;
     private int nbPersonne;
     private String statut;
-    private ArrayList<Table> tables;
+    private ArrayList<Table> tables = new ArrayList<>();
 
     public Reservation() {
     }
 
-    public Reservation(User client, Admin adminCharge, Restaurant restaurant, Date date, Time heureArrive, Time heureDepart, int nbPersonne, String statut) {
+    public Reservation(User client, Restaurant restaurant, Date date, Time heureArrive, Time heureDepart, int nbPersonne, String statut) {
         this.client = client;
-        this.adminCharge = adminCharge;
         this.restaurant = restaurant;
         this.date = date;
         this.heureArrive = heureArrive;
@@ -33,10 +31,9 @@ public class Reservation {
         this.statut = statut;
     }
 
-    public Reservation(int id, User client, Admin adminCharge, Restaurant restaurant, Date date, Time heureArrive, Time heureDepart, int nbPersonne, String statut, ArrayList<Table> tables) {
+    public Reservation(int id, User client, Restaurant restaurant, Date date, Time heureArrive, Time heureDepart, int nbPersonne, String statut, ArrayList<Table> tables) {
         this.id = id;
         this.client = client;
-        this.adminCharge = adminCharge;
         this.restaurant = restaurant;
         this.date = date;
         this.heureArrive = heureArrive;
@@ -63,13 +60,7 @@ public class Reservation {
         this.client = client;
     }
 
-    public Admin getAdminCharge() {
-        return adminCharge;
-    }
 
-    public void setAdminCharge(Admin adminCharge) {
-        this.adminCharge = adminCharge;
-    }
 
     public Restaurant getRestaurant() {
         return restaurant;
@@ -118,6 +109,9 @@ public class Reservation {
     public void setStatut(String statut) {
         this.statut = statut;
     }
+    public void addTable(Table t) {
+        tables.add(t);
+    }
 
     public ArrayList<Table> getTables() {
         return tables;
@@ -129,7 +123,7 @@ public class Reservation {
 
     @Override
     public String toString() {
-        return "Reservation{" + "id=" + id + ", client=" + client + ", adminCharge=" + adminCharge + ", restaurant=" + restaurant + ", date=" + date + ", heureArrive=" + heureArrive + ", heureDepart=" + heureDepart + ", nbPersonne=" + nbPersonne + ", statut=" + statut + ", tables=" + tables + '}';
+        return "Reservation{" + "id=" + id + ", client=" + client +  ", restaurant=" + restaurant + ", date=" + date + ", heureArrive=" + heureArrive + ", heureDepart=" + heureDepart + ", nbPersonne=" + nbPersonne + ", statut=" + statut + ", tables=" + tables + '}';
     }
 
     @Override
@@ -162,9 +156,7 @@ public class Reservation {
         if (!Objects.equals(this.client, other.client)) {
             return false;
         }
-        if (!Objects.equals(this.adminCharge, other.adminCharge)) {
-            return false;
-        }
+       
         if (!Objects.equals(this.restaurant, other.restaurant)) {
             return false;
         }

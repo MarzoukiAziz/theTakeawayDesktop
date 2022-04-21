@@ -58,7 +58,7 @@ public class ReclamationService implements IService<Reclamation>  {
             Statement st = cnx.createStatement();
             ResultSet rs = st.executeQuery(req);
             while (rs.next()) {
-                User us = new User();                
+                User us = new User(0);                
                 Reclamation t = new Reclamation(
                         rs.getInt("id"),
                         us,

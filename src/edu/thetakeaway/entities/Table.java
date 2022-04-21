@@ -18,6 +18,14 @@ public class Table {
         this.restaurant = restaurant;
     }
 
+    public Table(int posX, int posY, int nbPlaces, int numero, Restaurant restaurant) {
+        this.posX = posX;
+        this.posY = posY;
+        this.nbPlaces = nbPlaces;
+        this.numero = numero;
+        this.restaurant = restaurant;
+    }
+
   
 
     public Table() {
