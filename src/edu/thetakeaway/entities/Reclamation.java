@@ -28,6 +28,16 @@ public class Reclamation {
         this.heure = heure;
     }
 
+    public Reclamation(User user, String sujet, String contenu, String statut, Date date, Time heure) {
+        this.user = user;
+        this.sujet = sujet;
+        this.contenu = contenu;
+        this.statut = statut;
+        this.date = date;
+        this.heure = heure;
+    }
+    
+
     public int getId() {
         return id;
     }

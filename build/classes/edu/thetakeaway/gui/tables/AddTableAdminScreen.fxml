@@ -176,7 +176,7 @@
                   <Image url="@../../../../assets/logo2.png" />
                </image>
             </ImageView>
-            <Label layoutX="353.0" layoutY="61.0" text="Ajouter Une Table" textFill="WHITE">
+            <Label layoutX="353.0" layoutY="76.0" text="Ajouter Une Table" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="42.0" />
                </font>

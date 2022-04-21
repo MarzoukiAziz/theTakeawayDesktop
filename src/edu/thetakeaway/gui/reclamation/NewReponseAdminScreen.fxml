@@ -2,7 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -10,7 +10,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.thetakeaway.gui.tables.AddTableAdminScreenController">
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="edu.thetakeaway.gui.reclamation.NewReponseAdminScreenController">
    <children>
       <AnchorPane prefHeight="808.0" prefWidth="1064.0" style="-fx-background-color: #030307; -fx-background-radius: 15;">
          <children>
@@ -56,7 +57,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="reservationsBtn" contentDisplay="TOP" layoutX="10.0" layoutY="142.0" mnemonicParsing="false" onAction="#navigateToReservations" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Réservations" textFill="#a868a0">
+                  <Button fx:id="reservationsBtn" contentDisplay="TOP" layoutX="10.0" layoutY="142.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Réservations" textFill="#a868a0">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -92,7 +93,7 @@
                         <Font size="12.0" />
                      </font>
                   </Button>
-                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="419.0" mnemonicParsing="false" onAction="#navigateToTables" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Tables" textFill="#a868a0">
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="419.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Tables" textFill="#a868a0">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -176,39 +177,20 @@
                   <Image url="@../../../../assets/logo2.png" />
                </image>
             </ImageView>
-            <Label layoutX="353.0" layoutY="76.0" text="Ajouter Une Table" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="42.0" />
-               </font>
-            </Label>
-            <Label layoutX="156.0" layoutY="255.0" text="Numéro" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="25.0" />
-               </font>
-            </Label>
-            <Label layoutX="156.0" layoutY="312.0" text="Position Horizontale" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="25.0" />
-               </font>
-            </Label>
-            <Label layoutX="156.0" layoutY="370.0" text="Position Verticale" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="25.0" />
-               </font>
-            </Label>
-            <Label layoutX="156.0" layoutY="430.0" text="Nombre des places" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="25.0" />
-               </font>
-            </Label>
-            <TextField fx:id="numtf" layoutX="566.0" layoutY="258.0" prefHeight="31.0" prefWidth="344.0" />
-            <TextField layoutX="566.0" layoutY="315.0" prefHeight="31.0" prefWidth="344.0" fx:id="xtf" />
-            <TextField fx:id="ytf" layoutX="566.0" layoutY="373.0" prefHeight="31.0" prefWidth="344.0" />
-            <TextField fx:id="nbtf" layoutX="566.0" layoutY="433.0" prefHeight="31.0" prefWidth="344.0" />
-            <Button layoutX="823.0" layoutY="513.0" mnemonicParsing="false" onAction="#addTable" style="-fx-background-color: #228B22;" text="Confirmer" textFill="WHITE" />
-            <Button layoutX="169.0" layoutY="513.0" mnemonicParsing="false" onAction="#navigateToTables" style="-fx-background-color: #ff0000;" text="Annuler" textFill="WHITE" />
-            <Button layoutX="268.0" layoutY="513.0" mnemonicParsing="false" onAction="#resetTextFields" style="-fx-background-color: #1E90FF;" text="Reset" textFill="WHITE" />
          </children>
       </AnchorPane>
+      <Label layoutX="164.0" layoutY="145.0" text="Votre Réponse :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="reponseText" layoutX="158.0" layoutY="195.0" prefHeight="200.0" prefWidth="858.0" />
+      <Button fx:id="answerBtn" layoutX="888.0" layoutY="442.0" mnemonicParsing="false" onAction="#addReponse" prefHeight="31.0" prefWidth="125.0" style="-fx-background-color: #42af53;" text="Répondre" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="155.0" layoutY="442.0" mnemonicParsing="false" onAction="#navigateReclamationDetails" style="-fx-background-color: #ff0000;" text="Annuler" textFill="WHITE" />
+      <Button layoutX="254.0" layoutY="442.0" mnemonicParsing="false" onAction="#resetText" style="-fx-background-color: #1E90FF;" text="Reset" textFill="WHITE" />
    </children>
 </AnchorPane>

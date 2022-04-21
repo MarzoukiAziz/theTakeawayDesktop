@@ -13,10 +13,9 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReclamationService implements IService<Reclamation>  {
+public class ReclamationService  {
     Connection cnx = DataSource.getInstance().getCnx();
 
-    @Override
     public void ajouter(Reclamation r) {
         try {
             String req = "INSERT INTO `reclamation` ( `client_id_id`, `sujet`, `contenu`, `statut`, `date`, `heure`) VALUES ( ?,?,?,?,?,?)";
@@ -33,10 +32,13 @@ public class ReclamationService implements IService<Reclamation>  {
         }
     }
 
-    @Override
-    public void supprimer(int recId) {
+    public void supprimer(Reclamation rec) {
          try {
-            String req = "DELETE FROM `reclamation` WHERE id = " + recId;
+             ReponseService rps = new ReponseService();
+            for(Reponse r:rps.getReponsesByReclamatioId(rec)){
+                rps.supprimer(r.getId());
+            }
+            String req = "DELETE FROM `reclamation` WHERE id = " + rec.getId();
             Statement st = cnx.createStatement();
             st.executeUpdate(req);
             System.out.println("reclamation deleted !");
@@ -45,12 +47,18 @@ public class ReclamationService implements IService<Reclamation>  {
         }
     }
 
-    @Override
     public void modifier(Reclamation p) {
-        
+        try {
+            
+            String req = "UPDATE `reclamation` SET `statut` = '" + p.getStatut()+"' where id = "+p.getId();
+            Statement st = cnx.createStatement();
+            st.executeUpdate(req);
+            System.out.println("reclamation updated !");
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
     }
 
-    @Override
     public List<Reclamation> getAll() {
          List<Reclamation> list = new ArrayList<>();
         try {
@@ -58,10 +66,37 @@ public class ReclamationService implements IService<Reclamation>  {
             Statement st = cnx.createStatement();
             ResultSet rs = st.executeQuery(req);
             while (rs.next()) {
-                User us = new User(0);                
+                                
                 Reclamation t = new Reclamation(
                         rs.getInt("id"),
-                        us,
+                        new UserServices().getById(rs.getInt("client_id_id")),
+                         rs.getString("sujet"),
+                         rs.getString("contenu"),
+                        rs.getString("statut"),
+                        rs.getDate("date"),
+                        rs.getTime("heure"));
+                        
+                list.add(t);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        return list;
+    }
+    
+    
+    public List<Reclamation> getByUserId(User u) {
+         List<Reclamation> list = new ArrayList<>();
+        try {
+            String req = "Select * from reclamation where client_id_id = "+u.getId();
+            Statement st = cnx.createStatement();
+            ResultSet rs = st.executeQuery(req);
+            while (rs.next()) {
+                                
+                Reclamation t = new Reclamation(
+                        rs.getInt("id"),
+                        u,
                          rs.getString("sujet"),
                          rs.getString("contenu"),
                         rs.getString("statut"),

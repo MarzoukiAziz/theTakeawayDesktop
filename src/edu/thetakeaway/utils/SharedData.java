@@ -1,6 +1,7 @@
 
 package edu.thetakeaway.utils;
 
+import edu.thetakeaway.entities.Reclamation;
 import edu.thetakeaway.entities.Reservation;
 import edu.thetakeaway.entities.Restaurant;
 import edu.thetakeaway.entities.Table;
@@ -15,4 +16,5 @@ public class SharedData {
     public static Boolean pickMapXY=false;
     public static Restaurant selectedRestaurantForReserve= new Restaurant(2,"Rades");
     public static Reservation preparedReservation;
+    public static Reclamation selectedReclamation;
 }

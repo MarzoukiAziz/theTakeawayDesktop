@@ -59,7 +59,7 @@ public class ReponseService implements IService<Reponse> {
     public List<Reponse> getAll() {
         List<Reponse> list = new ArrayList<>();
         try {
-            String req = "Select * from `table`";
+            String req = "Select * from `reponse`";
             Statement st = cnx.createStatement();
             ResultSet rs = st.executeQuery(req);
             while (rs.next()) {
@@ -76,16 +76,14 @@ public class ReponseService implements IService<Reponse> {
 
   
     
-    public List<Reponse> getReponsesByReclamatioId(int recId) {
+    public List<Reponse> getReponsesByReclamatioId(Reclamation rc) {
         List<Reponse> list = new ArrayList<>();
         try {
-            String req = "Select * from `table` where reclamation_id = "+recId;
+            String req = "Select * from `reponse` where reclamation_id = "+rc.getId();
             Statement st = cnx.createStatement();
             ResultSet rs = st.executeQuery(req);
             while (rs.next()) {
-                User a = new User();
-                Reclamation rec = new Reclamation();
-                Reponse r = new Reponse(rs.getInt("id"), rec, a, rs.getString("contenu"), rs.getDate("date"), rs.getTime("heure"));
+                Reponse r = new Reponse(rs.getInt("id"), rc, new UserServices().getById(rs.getInt("author_id")), rs.getString("contenu"), rs.getDate("date"), rs.getTime("heure"));
                 list.add(r);
             }
         } catch (SQLException ex) {

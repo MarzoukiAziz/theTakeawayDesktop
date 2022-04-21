@@ -19,7 +19,7 @@ public class MainJAVAFx extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("../gui/reservations/ReserveScreen.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("../gui/dashboard/UserDashboardScreen.fxml"));
             Scene scene = new Scene(root);
             primaryStage.setTitle("TheTakeAway");
             primaryStage.setScene(scene);
