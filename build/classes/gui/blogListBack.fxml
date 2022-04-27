@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="ap" prefHeight="600.0" prefWidth="725.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.BlogListBackController">
+   <children>
+      <Label layoutX="61.0" layoutY="46.0" text="Blogs">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tv" layoutX="61.0" layoutY="136.0" onMouseClicked="#doubleClick" prefHeight="318.0" prefWidth="610.0">
+         <columns>
+            <TableColumn fx:id="title" prefWidth="75.0" text="Title" />
+            <TableColumn fx:id="contenu" prefWidth="299.20006561279297" text="Contenu" />
+            <TableColumn fx:id="date" prefWidth="139.99996948242188" text="Date" />
+            <TableColumn fx:id="statut" prefWidth="97.60003662109375" text="Statut" />
+         </columns>
+      </TableView>
+      <TextField fx:id="search" layoutX="61.0" layoutY="93.0" onKeyPressed="#search" prefHeight="26.0" prefWidth="307.0" />
+   </children>
+</AnchorPane>

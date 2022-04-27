@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" fx:id="ap" prefHeight="600.0" prefWidth="725.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="controllers.BlogShowBackController">
+   <children>
+      <Label layoutX="72.0" layoutY="56.0" text="Blog">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="72.0" layoutY="142.0" text="Title" />
+      <TextArea fx:id="contenu" editable="false" layoutX="126.0" layoutY="184.0" prefHeight="200.0" prefWidth="222.0" />
+      <TextField fx:id="titre" editable="false" layoutX="126.0" layoutY="138.0" />
+      <Label layoutX="61.0" layoutY="184.0" text="Contenu" />
+      <Button layoutX="460.0" layoutY="259.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="40.0" prefWidth="96.0" text="Valider" />
+      <Button layoutX="460.0" layoutY="305.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="40.0" prefWidth="96.0" text="Supprimer" />
+      <ComboBox fx:id="cb" layoutX="433.0" layoutY="138.0" prefWidth="150.0" />
+      <Button layoutX="460.0" layoutY="353.0" mnemonicParsing="false" onAction="#retour" prefHeight="40.0" prefWidth="96.0" text="Retour" />
+      <Label layoutX="391.0" layoutY="142.0" text="Statut" />
+   </children>
+</AnchorPane>
