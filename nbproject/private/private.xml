@@ -2,6 +2,17 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/Bouga/Desktop/bouga/src/edu/workshopjdbc3a48/services/RestaurantCRUD.java</file>
+            <file>file:/C:/Users/Bouga/Desktop/bouga/src/edu/workshopjdbc3a48/gui/Firstwindow.java</file>
+            <file>file:/C:/Users/Bouga/Desktop/bouga/src/edu/workshopjdbc3a48/entities/Restaurant.java</file>
+            <file>file:/C:/Users/Bouga/Desktop/bouga/src/edu/workshopjdbc3a48/gui/RestauController.java</file>
+            <file>file:/C:/Users/Bouga/Desktop/bouga/src/edu/workshopjdbc3a48/tests/MainClass.java</file>
+            <file>file:/C:/Users/Bouga/Desktop/bouga/src/edu/workshopjdbc3a48/services/ServicePersonne.java</file>
+            <file>file:/C:/Users/Bouga/Desktop/bouga/src/edu/workshopjdbc3a48/services/IService.java</file>
+            <file>file:/C:/Users/Bouga/Desktop/bouga/src/edu/workshopjdbc3a48/gui/restau.fxml</file>
+            <file>file:/C:/Users/Bouga/Desktop/bouga/src/edu/workshopjdbc3a48/gui/TemplateAdminController.java</file>
+            <file>file:/C:/Users/Bouga/Desktop/bouga/src/edu/workshopjdbc3a48/gui/TemplateAdmin.fxml</file>
+        </group>
     </open-files>
 </project-private>
