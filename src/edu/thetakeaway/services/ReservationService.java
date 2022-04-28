@@ -123,8 +123,8 @@ public class ReservationService {
         return list;
     }
 
-    public List<Reservation> getByUserId(User user) {
-        List<Reservation> list = new ArrayList<>();
+    public ArrayList<Reservation> getByUserId(User user) {
+        ArrayList<Reservation> list = new ArrayList<>();
         try {
             String req = "Select * from reservation where client_id_id = " + user.getId();
             Statement st = cnx.createStatement();
@@ -155,12 +155,12 @@ public class ReservationService {
             Statement st = cnx.createStatement();
             ResultSet rs = st.executeQuery(req);
             while (rs.next()) {
-                Restaurant r = new Restaurant(1, "sdaa");
-                User u = new User();
+                UserServices us = new UserServices();
+                User u = us.getById(rs.getInt("client_id_id"));
                 Reservation t = new Reservation(
                         rs.getInt("id"),
                         u,
-                        r,
+                        new RestaurantService().getById(rs.getInt("restaurant_id")),
                         rs.getDate("date"),
                         rs.getTime("heure_arrive"),
                         rs.getTime("heure_depart"),
@@ -170,7 +170,7 @@ public class ReservationService {
                 list.add(t);
             }
         } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
+            System.out.println(ex);
         }
 
         return list;

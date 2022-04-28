@@ -12,6 +12,7 @@ import edu.thetakeaway.entities.User;
 import edu.thetakeaway.services.ReservationService;
 import edu.thetakeaway.services.RestaurantService;
 import edu.thetakeaway.services.TableService;
+import edu.thetakeaway.utils.MailService;
 import edu.thetakeaway.utils.SharedData;
 import java.io.IOException;
 import java.net.URL;
@@ -112,11 +113,23 @@ public class ReservationsAdminScreenController implements Initializable {
                     ReservationService rs = new ReservationService();
                     rs.modifier(t);
                     loadReservationsInTableView(SharedData.selectedRestaurant);
+                    String mailBody="Nous avons le plaisir de vous informer que votre réservation pour "+
+                            t.getClient().getNom()
+                            +" le "
+                            +t.getDate()
+                            + " , a été acceptée.";
+                    MailService.sendMail(t.getClient().getEmail(), "Reservation Accpetée", mailBody);
                 });
                 refuseBtn.setOnAction(event -> {
                     t.setStatut("Réfusé");
                     ReservationService rs = new ReservationService();
                     rs.modifier(t);
+                    String mailBody="Nous sommes désolé de vous informer que votre réservation pour "+
+                            t.getClient().getNom()
+                            +" le "
+                            +t.getDate()
+                            + " , a été réfusée.";
+                    MailService.sendMail(t.getClient().getEmail(), "Reservation Réfusé", mailBody);
                     loadReservationsInTableView(SharedData.selectedRestaurant);
                 });
                 cancelBtn.setOnAction(event -> {

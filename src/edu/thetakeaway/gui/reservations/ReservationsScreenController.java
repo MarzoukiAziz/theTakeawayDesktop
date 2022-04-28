@@ -18,7 +18,9 @@ import edu.thetakeaway.utils.SharedData;
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.Time;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -56,6 +58,16 @@ public class ReservationsScreenController implements Initializable {
     private TableColumn<Reservation, String> tablesCl;
     @FXML
     private TableColumn<Reservation, String> statutCl;
+    @FXML
+    private Button canceledBtn;
+    @FXML
+    private Button waitingBtn;
+    @FXML
+    private Button acceptedBtn;
+    @FXML
+    private Button rejectedBtn;
+    @FXML
+    private Button allBtn;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -87,17 +99,36 @@ public class ReservationsScreenController implements Initializable {
                     t.setStatut("Annulé");
                     ReservationService rs = new ReservationService();
                     rs.modifier(t);
-                    loadReservationsInTableView(SharedData.currentUser);
+                    loadReservationsInTableView("",SharedData.currentUser);
                 });
             }
         });
         table.getColumns().add(updateCol);
-        loadReservationsInTableView(SharedData.currentUser);
+        loadReservationsInTableView("",SharedData.currentUser);
+        
+        waitingBtn.setOnAction(event -> {
+            loadReservationsInTableView("En Attente",SharedData.currentUser);
+        });
+        acceptedBtn.setOnAction(event -> {
+            loadReservationsInTableView("Accepté",SharedData.currentUser);
+        });
+        rejectedBtn.setOnAction(event -> {
+            loadReservationsInTableView("Réfusé",SharedData.currentUser);
+        });
+        canceledBtn.setOnAction(event -> {
+            loadReservationsInTableView("Annulé",SharedData.currentUser);
+        });
+        allBtn.setOnAction(event -> {
+            loadReservationsInTableView("",SharedData.currentUser);
+        });
     }
 
-    public void loadReservationsInTableView(User u) {
+    public void loadReservationsInTableView(String filter,User u) {
         ReservationService em = new ReservationService();
-        List<Reservation> reservations = em.getByUserId(u);
+        ArrayList<Reservation> reservations = em.getByUserId(u);
+        reservations = reservations.stream()
+                .filter(r -> r.getStatut().contains(filter))
+                .collect(Collectors.toCollection(ArrayList::new));
         ObservableList<Reservation> revData = FXCollections.observableArrayList(reservations);
         //clientCl.setCellValueFactory(new PropertyValueFactory<>("user"));
         resCl.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getRestaurant().getNom()));
@@ -120,6 +151,10 @@ public class ReservationsScreenController implements Initializable {
     private void navigateToReservations(ActionEvent actionEvent) {
         navigateTo(actionEvent, "ReservationsScreen.fxml");
     }
+    @FXML
+    private void navigateToDashboard(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../dashboard/UserDashboardScreen.fxml");
+    }
 
     private void navigateTo(ActionEvent actionEvent, String path) {
         try {
@@ -131,6 +166,10 @@ public class ReservationsScreenController implements Initializable {
         } catch (IOException ex) {
 
         }
+    }
+
+    @FXML
+    private void navigateToReservations(MouseEvent event) {
     }
 
     

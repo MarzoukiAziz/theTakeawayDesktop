@@ -50,7 +50,7 @@ public class ReserveScreenController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        restf.setText(SharedData.selectedRestaurantForReserve.getNom());
+        restf.setText(SharedData.selectedRestaurant.getNom());
 
         //limit date picking in [today ; today+15days]
         datePick.setDayCellFactory(d -> new DateCell() {
@@ -86,7 +86,7 @@ public class ReserveScreenController implements Initializable {
             LocalTime hd = heureCB.getValue().toLocalTime();
             hd=hd.plusMinutes(departCB.getValue());
             Date date = new Date(datePick.getValue().getYear()-1900, datePick.getValue().getMonthValue(), datePick.getValue().getDayOfMonth());
-            Reservation rv = new Reservation(SharedData.currentUser, SharedData.selectedRestaurantForReserve, date, new Time(heureCB.getValue().getTime()), new Time(hd.getHour(), hd.getMinute(), 0), nbpCB.getValue(), "En Attente");
+            Reservation rv = new Reservation(SharedData.currentUser, SharedData.selectedRestaurant, date, new Time(heureCB.getValue().getTime()), new Time(hd.getHour(), hd.getMinute(), 0), nbpCB.getValue(), "En Attente");
             SharedData.preparedReservation = rv;
             navigateToAvailableTables(actionEvent);
         }

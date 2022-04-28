@@ -27,7 +27,7 @@
             <VBox prefHeight="616.0" prefWidth="89.0" style="-fx-background-color: #131022; -fx-background-radius: 15 0 0 15;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <Pane prefHeight="79.0" prefWidth="97.0" style="-fx-background-radius: 15 0 15 15;" />
-                  <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="66.0" prefWidth="94.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Acceuil" textFill="#a868a0" wrapText="true">
+                  <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#navigateToDashboard" prefHeight="66.0" prefWidth="94.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Acceuil" textFill="#a868a0" wrapText="true">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -114,7 +114,7 @@
                   </Button>
                   <Button fx:id="reclamationsBtn" contentDisplay="TOP" layoutX="10.0" layoutY="683.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Reclamations" textFill="#a868a0">
                      <graphic>
-                        <ImageView fitHeight="25.0" fitWidth="34.0"  pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../assets/complain.png" />
                            </image>
@@ -160,6 +160,11 @@
                   <Image url="@../../../../assets/logo2.png" />
                </image>
             </ImageView>
+            <Button fx:id="canceledBtn" layoutX="573.0" layoutY="160.0" mnemonicParsing="false" style="-fx-background-color: #444444;" text="Annulé" textFill="WHITE">
+               <font>
+                  <Font name="Segoe Print Bold" size="15.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
       <Label layoutX="420.0" layoutY="73.0" text="Reservations" textFill="LIGHTBLUE">
@@ -167,7 +172,7 @@
             <Font name="Segoe UI Black" size="40.0" />
          </font>
       </Label>
-      <TableView fx:id="table" layoutX="127.0" layoutY="177.0" prefHeight="597.0" prefWidth="910.0" stylesheets="@../../../../css/fullpackstyling.css">
+      <TableView fx:id="table" layoutX="127.0" layoutY="222.0" prefHeight="552.0" prefWidth="910.0" stylesheets="@../../../../css/fullpackstyling.css">
          <columns>
             <TableColumn fx:id="resCl" prefWidth="75.0" text="Restaurant" />
             <TableColumn fx:id="dateCl" prefWidth="75.0" text="Date" />
@@ -181,5 +186,25 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
+      <Button fx:id="waitingBtn" layoutX="244.0" layoutY="161.0" mnemonicParsing="false" style="-fx-background-color: #EEFF00;" text="En Attente">
+         <font>
+            <Font name="Segoe Print Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="acceptedBtn" layoutX="366.0" layoutY="161.0" mnemonicParsing="false" style="-fx-background-color: #22FF00;" text="Accepté">
+         <font>
+            <Font name="Segoe Print Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="rejectedBtn" layoutX="476.0" layoutY="161.0" mnemonicParsing="false" style="-fx-background-color: #EE4433;" text="Réfusé" textFill="WHITE">
+         <font>
+            <Font name="Segoe Print Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="allBtn" layoutX="150.0" layoutY="161.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="74.0" style="-fx-background-color: #EFFEFF;" text="Tous">
+         <font>
+            <Font name="Segoe Print Bold" size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

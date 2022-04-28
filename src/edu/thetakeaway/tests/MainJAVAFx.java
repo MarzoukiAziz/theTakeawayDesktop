@@ -1,6 +1,21 @@
 
 package edu.thetakeaway.tests;
 
+import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.geometry.Side;
+import javafx.scene.chart.PieChart;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -17,9 +32,12 @@ import javafx.stage.Stage;
 public class MainJAVAFx extends Application {
 
     @Override
-    public void start(Stage primaryStage) {
+    public  void start(Stage primaryStage) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("../gui/dashboard/UserDashboardScreen.fxml"));
+            //Admin Panel
+            Parent root = FXMLLoader.load(getClass().getResource("../gui/dashboard/AdminDashboardScreen.fxml"));
+            //User
+            //Parent root = FXMLLoader.load(getClass().getResource("../gui/dashboard/UserDashboardScreen.fxml"));
             Scene scene = new Scene(root);
             primaryStage.setTitle("TheTakeAway");
             primaryStage.setScene(scene);

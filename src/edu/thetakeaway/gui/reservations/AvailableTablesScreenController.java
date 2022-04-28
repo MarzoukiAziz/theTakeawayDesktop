@@ -54,7 +54,7 @@ public class AvailableTablesScreenController implements Initializable {
                     + "   Horaire : " + rv.getHeureArrive()
                     + " - " + rv.getHeureDepart() + "   Pour " + rv.getNbPersonne() + " personnes.");
             TableService ts = new TableService();
-            List<Table> tables = ts.getTablesByRestaurant(SharedData.selectedRestaurantForReserve);
+            List<Table> tables = ts.getTablesByRestaurant(SharedData.selectedRestaurant);
 
             addTablesToRestaurantMap(tables);
         } catch (Exception ex) {

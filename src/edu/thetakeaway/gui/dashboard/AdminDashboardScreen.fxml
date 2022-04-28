@@ -69,7 +69,7 @@
                         <Font size="12.0" />
                      </font>
                   </Button>
-                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="287.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Commandes" textFill="#a868a0">
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="287.0" mnemonicParsing="false" onAction="#navigateToCommandes" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Commandes" textFill="#a868a0">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -81,7 +81,7 @@
                         <Font size="12.0" />
                      </font>
                   </Button>
-                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="353.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Restaurants" textFill="#a868a0">
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="353.0" mnemonicParsing="false" onAction="#navigateToRestaurants" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Restaurants" textFill="#a868a0">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -105,7 +105,7 @@
                         <Font size="12.0" />
                      </font>
                   </Button>
-                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="485.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Menu" textFill="#a868a0">
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="485.0" mnemonicParsing="false" onAction="#navigateToMenu" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Menu" textFill="#a868a0">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -153,7 +153,7 @@
                         <Font size="12.0" />
                      </font>
                   </Button>
-                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="716.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Promotions" textFill="#a868a0">
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="716.0" mnemonicParsing="false" onAction="#navigateToPromotions" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Promotions" textFill="#a868a0">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -177,25 +177,21 @@
                   <Image url="@../../../../assets/logo2.png" />
                </image>
             </ImageView>
+            <Label layoutX="425.0" layoutY="49.0" prefHeight="107.0" prefWidth="229.0" text="BIENVENUE">
+               <font>
+                  <Font name="Forte" size="30.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="RED" />
+                        <Stop color="#0095ff" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Pane fx:id="panne" layoutX="101.0" layoutY="156.0" prefHeight="576.0" prefWidth="951.0" style="-fx-background-color: #ffffff;" />
          </children>
       </AnchorPane>
-      <Label layoutX="280.0" layoutY="94.0" prefHeight="175.0" prefWidth="573.0" text="BIENVENUE">
-         <font>
-            <Font name="Forte" size="90.0" />
-         </font>
-         <textFill>
-            <LinearGradient endX="1.0" endY="1.0">
-               <stops>
-                  <Stop color="RED" />
-                  <Stop color="#0095ff" offset="1.0" />
-               </stops>
-            </LinearGradient>
-         </textFill>
-      </Label>
-      <ImageView fitHeight="411.0" fitWidth="405.0" layoutX="364.0" layoutY="269.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../assets/logo2.png" />
-         </image>
-      </ImageView>
    </children>
 </AnchorPane>
