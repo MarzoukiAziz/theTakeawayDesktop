@@ -4,42 +4,195 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="ap" prefHeight="600.0" prefWidth="725.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.BlogShowController">
-   <children>
-      <Label layoutX="84.0" layoutY="34.0" text="Blog">
-         <font>
-            <Font size="27.0" />
-         </font>
-      </Label>
-      <Label fx:id="titre" layoutX="51.0" layoutY="85.0" text="Blog">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="contenu" layoutX="54.0" layoutY="126.0" text="Blog">
-         <font>
-            <Font size="10.0" />
-         </font>
-      </Label>
-      <ScrollPane layoutX="51.0" layoutY="251.0" prefHeight="250.0" prefWidth="400.0">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1000.0" prefWidth="400.0">
+<AnchorPane id="AnchorPane" fx:id="ap" prefHeight="1000.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.BlogShowController">
+  <children>
+    <AnchorPane layoutX="-14.0" layoutY="-23.0" prefHeight="917.0" prefWidth="1079.0" style="-fx-background-color: #030307; -fx-background-radius: 15;">
+         <children>
+            <Pane layoutX="590.0" layoutY="-1.0" prefHeight="93.0" prefWidth="405.0" style="-fx-background-radius: 20 20 0 0;" styleClass="linear-grad">
                <children>
-                  <VBox fx:id="vbox" prefHeight="0.0" prefWidth="400.0" />
+                  <Label layoutX="206.0" layoutY="27.0" text="Deconnexion" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <VBox prefHeight="616.0" prefWidth="89.0" style="-fx-background-color: #131022; -fx-background-radius: 15 0 0 15;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Pane prefHeight="79.0" prefWidth="97.0" style="-fx-background-radius: 15 0 15 15;" />
+                  <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="66.0" prefWidth="94.0" styleClass="button3" stylesheets="@../css/fullpackstyling.css" text="Acceuil" textFill="#a868a0" wrapText="true">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/dashboard.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="353.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../css/fullpackstyling.css" text="Restaurants" textFill="#a868a0">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/restaurant.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="716.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../css/fullpackstyling.css" text="Promotions" textFill="#a868a0">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/tag.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="617.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../css/fullpackstyling.css" text="Blog" textFill="#a868a0">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/blog.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="551.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../css/fullpackstyling.css" text="Articles" textFill="#a868a0">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/article.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+                  <Pane layoutX="10.0" layoutY="10.0" prefHeight="79.0" prefWidth="74.0" style="-fx-background-radius: 15 0 15 15;" />
+                  <Button fx:id="reservationsBtn" contentDisplay="TOP" layoutX="10.0" layoutY="142.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../css/fullpackstyling.css" text="Réservations" textFill="#a868a0">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/booking.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="287.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../css/fullpackstyling.css" text="Commandes" textFill="#a868a0">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/order.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="reclamationsBtn" contentDisplay="TOP" layoutX="10.0" layoutY="683.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../css/fullpackstyling.css" text="Reclamations" textFill="#a868a0">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/complain.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="419.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../css/fullpackstyling.css" text="Mes Cartes" textFill="#a868a0">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/credit-card.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="485.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../css/fullpackstyling.css" text="Mon Compte" textFill="#a868a0">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/user.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+            <Label layoutX="178.0" layoutY="34.0" text="The TakeAway" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="56.0" fitWidth="60.0" layoutX="107.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/logo2.png" />
+               </image>
+            </ImageView>
+          <AnchorPane layoutX="292.0" layoutY="377.0" minHeight="0.0" minWidth="0.0" prefHeight="987.0" prefWidth="400.0">
+               <children>
+                  <ScrollPane layoutX="7.0" prefHeight="299.0" prefWidth="400.0">
+                     <content>
+                        <VBox fx:id="vbox" blendMode="DARKEN" prefHeight="302.0" prefWidth="400.0" />
+                     </content></ScrollPane>
+                  <TextField fx:id="send" layoutX="25.0" layoutY="334.0" prefHeight="26.0" prefWidth="298.0" />
+                  <Button layoutX="338.0" layoutY="334.0" mnemonicParsing="false" onAction="#send" prefHeight="26.0" prefWidth="79.0" text="Send" />
+                  <Label fx:id="count" layoutX="315.0" layoutY="463.0" prefHeight="15.0" prefWidth="71.0" textFill="#f8f8f8">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
-        </content>
-      </ScrollPane>
-      <TextField fx:id="send" layoutX="58.0" layoutY="526.0" prefHeight="26.0" prefWidth="298.0" />
-      <Button layoutX="372.0" layoutY="527.0" mnemonicParsing="false" onAction="#send" prefHeight="26.0" prefWidth="79.0" text="Send" />
-      <Label fx:id="count" layoutX="468.0" layoutY="251.0">
-         <font>
-            <Font size="10.0" />
-         </font>
-      </Label>
+      
+            <Label layoutX="293.0" layoutY="131.0" text="Blog" textFill="WHITE">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+            <Label fx:id="titre" layoutX="292.0" layoutY="181.0" text="Blog" textFill="#cdaeae">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="contenu" layoutX="298.0" layoutY="235.0" text="Blog" textFill="#bca4a4">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Button blendMode="GREEN" layoutX="116.0" layoutY="771.0" mnemonicParsing="false" onAction="#retour" prefHeight="40.0" prefWidth="96.0" text="Retour" textAlignment="CENTER" textFill="#070606" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

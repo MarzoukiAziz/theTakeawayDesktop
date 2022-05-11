@@ -33,13 +33,13 @@ public class HomeController implements Initializable {
 
     @FXML
     private void front(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("/gui/frontOffice.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/gui/blogList.fxml"));
         ap.getChildren().setAll(pane);
     }
 
     @FXML
     private void back(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("/gui/backOffice.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/gui/blogListBack.fxml"));
         ap.getChildren().setAll(pane);
     }
     

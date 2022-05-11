@@ -94,5 +94,9 @@ public class BlogShowController implements Initializable {
         
             
     }
-    
+     @FXML
+    private void retour(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/gui/blogList.fxml"));
+                ap.getChildren().setAll(pane);
+    }
 }

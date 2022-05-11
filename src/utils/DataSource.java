@@ -11,14 +11,14 @@ import java.sql.SQLException;
 
 /**
  *
- * @author mehdibehira
+ * @author MIMA
  */
+// jdbc java data base connectivity howa el driver w mysql api permettant l'acces lel base de donnees
 public class DataSource {
     
         private static DataSource instance;
     private Connection cnx;
-    // pour mamp serveur sur mac changer le port sur 8889 pour autre serveur
-    //windows 3308 ou verifier le port
+ 
     private final String URL = "jdbc:mysql://localhost:3306/thetakeaway";
     private final String LOGIN = "root";
     private final String PASSWORD = "";
@@ -38,7 +38,7 @@ public class DataSource {
         }
         return instance;
     }
-
+//patern singleton mtena w fonct mteo fou9ha 
     public Connection getCnx() {
         return cnx;
     }

@@ -85,6 +85,7 @@ public class BlogService {
         try {
             String requete = "SELECT * FROM blog_client";
             PreparedStatement pst = cnx.prepareStatement(requete);
+            // resultset sert a la lecture du resultat w executeQuery trajaalek comme retour une liste d'objets
             ResultSet rs = pst.executeQuery();
             while (rs.next()) {
                 blogs.add(new Blog(rs.getString("id"),rs.getString("author_id"),rs.getString("title"),rs.getString("contenu"),rs.getString("date"),rs.getString("statut")));
@@ -201,7 +202,7 @@ public class BlogService {
                     InternetAddress.parse("admin@adm.in, admin@adm.in")
             );
             message.setSubject("Blog Ajouté");
-            message.setText(" Blog ajouté! \n ");
+            message.setText(" un client demande d'ajouter new blog! \n ");
 
             Transport.send(message);
 
@@ -217,6 +218,6 @@ public class BlogService {
         String token = "5bff59d53efa6fccadb17ea261a9366e";
         Twilio.init(sid, token);
         com.twilio.rest.api.v2010.account.Message message = com.twilio.rest.api.v2010.account.Message.creator(new PhoneNumber("+21623344877"), new PhoneNumber("+14094074123"), 
-                "Blog validé").create();
+                "votre blog est confimé").create();
     }
 }
