@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
+
 package edu.thetakeaway.gui.user;
 
 import edu.thetakeaway.entities.User;
@@ -22,6 +19,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -40,28 +38,29 @@ import tray.notification.TrayNotification;
  * @author rafrafi
  */
 public class ForgotPassController implements Initializable {
-       @FXML
+
+    @FXML
     private TextField Emaile;
-         @FXML
+    @FXML
     private TextField Question;
-           @FXML
+    @FXML
     private TextField Answer;
-             @FXML
+    @FXML
     private TextField newpass;
-             
-                @FXML
+
+    @FXML
     private TextField mail;
-                   @FXML
+    @FXML
     private TextField mailcode;
-                      @FXML
+    @FXML
     private Button sendmail;
-   
+
     @FXML
     private Button save;
     @FXML
     private Button back;
     @FXML
-    private Button Search;  
+    private Button Search;
     @FXML
     private Button inscribtn;
     @FXML
@@ -73,185 +72,167 @@ public class ForgotPassController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-     @FXML
+    }
+
+    @FXML
     private void back(ActionEvent event) throws IOException {
-        Stage stage= new Stage();
-    stage.setTitle("Login");
-    stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("LoginUser.fxml"))));
-    stage.initModality(Modality.WINDOW_MODAL);
-        stage.initOwner(((Node) event.getSource()).getScene().getWindow());
-        stage.show();
+        navigateTo(event, "LoginUser.fxml");
 
     }
-      @FXML
+
+    @FXML
     private void sendmail(ActionEvent event) throws IOException {
-       
-        
-        
-      Random rand = new Random(); //instance of random class
-      int upperbound = 25555;
+
+        Random rand = new Random(); //instance of random class
+        int upperbound = 25555;
         //generate random values from 0-24
-      int numer = rand.nextInt(upperbound); 
-       
-     
-      
-         String mailin=mail.getText();
-         Mail m = new Mail();
-            String sub="Bienvenue sur notre thetakway";
-                 
-           String  content="Bonjour Mr/Mme "+". Votre code est = "+numer;
-           String finalcontant=content;
-           System.out.println(numer);
-           m.sendEmail(mailin,finalcontant);
-           SharedData da =  new SharedData();
-           da.GenratedCode=numer;
-           System.out.println(da.GenratedCode);
+        int numer = rand.nextInt(upperbound);
+
+        String mailin = mail.getText();
+        Mail m = new Mail();
+        String sub = "Bienvenue sur notre thetakway";
+
+        String content = "Bonjour Mr/Mme " + ". Votre code est = " + numer;
+        String finalcontant = content;
+        System.out.println(numer);
+        m.sendEmail(mailin, finalcontant);
+        SharedData da = new SharedData();
+        da.GenratedCode = numer;
+        System.out.println(da.GenratedCode);
 
     }
-     @FXML
+
+    @FXML
     private void Search(ActionEvent event) throws IOException, ClassNotFoundException, SQLException {
 
-      SharedData da =  new SharedData();
-        int numtel = Integer.parseInt(Emaile.getText()) ;
-     
-       
-       
+        SharedData da = new SharedData();
+        int numtel = Integer.parseInt(Emaile.getText());
+
         String Numberr = Emaile.getText();
-        
-         
+
         UserServices us = new UserServices();
         User U = new User();
-         Connection cnx = DataSource.getInstance().getCnx();
-        
-        if(Emaile.getText().isEmpty()){
-            Alert a=new Alert(Alert.AlertType.ERROR,"les Numero est vides!", ButtonType.OK);
-           a.showAndWait();
-        }else if(us.isValidPhoneNumber(Numberr)!=true){
-           Alert a=new Alert(Alert.AlertType.ERROR,"Verifyer Votre Numero", ButtonType.OK);
-           a.showAndWait();
+        Connection cnx = DataSource.getInstance().getCnx();
+
+        if (Emaile.getText().isEmpty()) {
+            Alert a = new Alert(Alert.AlertType.ERROR, "les Numero est vides!", ButtonType.OK);
+            a.showAndWait();
+        } else if (us.isValidPhoneNumber(Numberr) != true) {
+            Alert a = new Alert(Alert.AlertType.ERROR, "Verifyer Votre Numero", ButtonType.OK);
+            a.showAndWait();
             Emaile.setText("");
             Question.setText("");
-          
+
             Emaile.requestFocus();
-       }
-       else{
-            U=us.getByIda(numtel);
-            
-        System.out.println(U);
-        Question.setText(U.getSecurityq());
-        
-            
-            
-        }       
-       
-        
-    } 
-         @FXML
-      private void openSignup(ActionEvent event) throws IOException {
-         
-          Stage stage= new Stage();
-    stage.setTitle("Inscription");
-    stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("InscriptionUser.fxml"))));
-    stage.initModality(Modality.WINDOW_MODAL);
-        stage.initOwner(((Node) event.getSource()).getScene().getWindow());
-        stage.show();
-    }  
-      
-      
-      
-      
-       @FXML
-        private void save(ActionEvent event) throws IOException {
-              SharedData da =  new SharedData();
-          
-        
-        int code = Integer.parseInt(mailcode.getText()) ;
-        String mailin=mail.getText();
-              UserServices us = new UserServices();
-      
-             int numtel = Integer.parseInt(Emaile.getText()) ;
-        String Questions=Question.getText();
-        String Answers =Answer.getText();
-        String pass =newpass.getText();
-        if( Emaile.getText().isEmpty()|| Question.getText().isEmpty()|| Answer.getText().isEmpty()||newpass.getText().isEmpty()){
-            Alert a=new Alert(Alert.AlertType.ERROR,"les champs sont vides!", ButtonType.OK);
-           a.showAndWait();
+        } else {
+            U = us.getByIda(numtel);
+
+            System.out.println(U);
+            Question.setText(U.getSecurityq());
+
         }
-        else if (!(us.isValidAnswe(numtel, Answers))){
-             Alert a=new Alert(Alert.AlertType.ERROR,"Votre reponse est faux", ButtonType.OK);
-           a.showAndWait();
-           Answer.setText("");
-           
-          
+
+    }
+
+    @FXML
+    private void openSignup(ActionEvent event) throws IOException {
+        navigateTo(event, "InscriptionUser.fxml");
+    }
+   private void navigateTo(ActionEvent actionEvent, String path) {
+        try {
+            Parent exercices_parent = FXMLLoader.load(getClass().getResource(path));
+            Scene ex_section_scene = new Scene(exercices_parent);
+            Stage second_stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            second_stage.setScene(ex_section_scene);
+            second_stage.show();
+        } catch (IOException ex) {
+
+        }
+    }
+    @FXML
+    private void save(ActionEvent event) throws IOException {
+        SharedData da = new SharedData();
+
+        int code = Integer.parseInt(mailcode.getText());
+        String mailin = mail.getText();
+        UserServices us = new UserServices();
+
+        int numtel = Integer.parseInt(Emaile.getText());
+        String Questions = Question.getText();
+        String Answers = Answer.getText();
+        String pass = newpass.getText();
+        if (Emaile.getText().isEmpty() || Question.getText().isEmpty() || Answer.getText().isEmpty() || newpass.getText().isEmpty()) {
+            Alert a = new Alert(Alert.AlertType.ERROR, "les champs sont vides!", ButtonType.OK);
+            a.showAndWait();
+        } else if (!(us.isValidAnswe(numtel, Answers))) {
+            Alert a = new Alert(Alert.AlertType.ERROR, "Votre reponse est faux", ButtonType.OK);
+            a.showAndWait();
+            Answer.setText("");
+
             Answer.requestFocus();
-            
-        }else if (us.existeMail2(mailin)==0){
-           Alert a=new Alert(Alert.AlertType.ERROR,"Verifyer Votre Email", ButtonType.OK);
-           a.showAndWait();
+
+        } else if (us.existeMail2(mailin) == 0) {
+            Alert a = new Alert(Alert.AlertType.ERROR, "Verifyer Votre Email", ButtonType.OK);
+            a.showAndWait();
             mail.setText("");
-           
-          
+
             mail.requestFocus();
-           
-       }else if (code != da.GenratedCode ){
-           
-            Alert a=new Alert(Alert.AlertType.ERROR,"Verifyer Votre Code de verification", ButtonType.OK);
-           a.showAndWait();
+
+        } else if (code != da.GenratedCode) {
+
+            Alert a = new Alert(Alert.AlertType.ERROR, "Verifyer Votre Code de verification", ButtonType.OK);
+            a.showAndWait();
             mail.setText("");
-           
-          
+
             mail.requestFocus();
-       }else if (us.existeMailnum(mailin, numtel)==0){
-             Alert a=new Alert(Alert.AlertType.ERROR,"le Email ne corespend pas au numero", ButtonType.OK);
-           a.showAndWait();
+        } else if (us.existeMailnum(mailin, numtel) == 0) {
+            Alert a = new Alert(Alert.AlertType.ERROR, "le Email ne corespend pas au numero", ButtonType.OK);
+            a.showAndWait();
             mail.setText("");
             Emaile.setText("");
-           
-          
+
             Emaile.requestFocus();
-            
-       }
-        else{
-           
-             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Comfirmation");
-        alert.setHeaderText(null);
-        alert.setContentText("Êtes-vous sûr de modifier ?");
-        Optional<ButtonType> action = alert.showAndWait();
+
+        } else {
+
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Comfirmation");
+            alert.setHeaderText(null);
+            alert.setContentText("Êtes-vous sûr de modifier ?");
+            Optional<ButtonType> action = alert.showAndWait();
             System.out.println("User Updated");
-             User U = new User();
-            U=us.getByIda(numtel);
+            User U = new User();
+            U = us.getByIda(numtel);
             U.setPassword(pass);
             System.out.println(U.getId());
             System.out.println(U.getPassword());
-          us.modifier2(U.getId(),U);
-              String tilte = "Resset Password Success ";
+            us.modifier2(U.getId(), U);
+            String tilte = "Resset Password Success ";
             String message = "un message a etes envoyer ";
-          TrayNotification tray = new TrayNotification();
+            TrayNotification tray = new TrayNotification();
             AnimationType type = AnimationType.POPUP;
-        
+
             tray.setAnimationType(type);
             tray.setTitle(tilte);
             tray.setMessage(message);
             tray.setNotificationType(NotificationType.SUCCESS);
             tray.showAndDismiss(Duration.millis(1000));
-          Mail m = new Mail();
-          
-         String sub="Reset-Password Affected sur notre thetakway";
-                 String sub2=" Votre nouveaux Mot de pass est: "+U.getPassword();
-           String  content="Bonjour Mr/Mme "+U.getNom()+". Au nom de tous les membres du thetakway, je vous informer que le mot de passe est change avec succes ";
-           String finalcontant=sub+content+sub2;
-           m.sendEmail(U.getEmail(),finalcontant);
-            Stage stage= new Stage();
-    stage.setTitle("Login");
-    stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("LoginUser.fxml"))));
-    stage.initModality(Modality.WINDOW_MODAL);
-        stage.initOwner(((Node) event.getSource()).getScene().getWindow());
-        stage.show();
-            
+            Mail m = new Mail();
+
+            String sub = "Reset-Password Affected sur notre thetakway";
+            String sub2 = " Votre nouveaux Mot de pass est: " + U.getPassword();
+            String content = "Bonjour Mr/Mme " + U.getNom() + ". Au nom de tous les membres du thetakway, je vous informer que le mot de passe est change avec succes ";
+            String finalcontant = sub + content + sub2;
+            m.sendEmail(U.getEmail(), finalcontant);
+            Stage stage = new Stage();
+            stage.setTitle("Login");
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("LoginUser.fxml"))));
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initOwner(((Node) event.getSource()).getScene().getWindow());
+            stage.show();
+
         }
-        
-    }  
-    
+
+    }
+
 }

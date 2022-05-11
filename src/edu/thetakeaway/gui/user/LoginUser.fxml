@@ -11,9 +11,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.thetakeaway.gui.user.LoginUserController">
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.thetakeaway.gui.user.LoginUserController">
    <children>
-      <AnchorPane layoutX="-20.0" layoutY="2.0" onMouseClicked="#openForget" prefHeight="667.0" prefWidth="1234.0" style="-fx-background-color: #030307; -fx-background-radius: 15;">
+      <AnchorPane onMouseClicked="#openForget" prefHeight="724.0" prefWidth="1051.0" style="-fx-background-color: #030307; -fx-background-radius: 15;">
          <children>
             <Pane layoutX="590.0" layoutY="-1.0" prefHeight="93.0" prefWidth="405.0" style="-fx-background-radius: 20 20 0 0;" styleClass="linear-grad" />
             <Label layoutX="222.0" layoutY="59.0" text="The TakeAway" textFill="WHITE">
@@ -26,48 +26,48 @@
                   <Image url="@../../../../assets/logo2.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="702.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="672.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../assets/user.png" />
                </image>
             </ImageView>
-            <Label layoutX="555.0" layoutY="119.0" prefHeight="23.0" prefWidth="182.0" text="Login" textFill="WHITE">
+            <Label layoutX="352.0" layoutY="121.0" prefHeight="71.0" prefWidth="298.0" text="Se connecter" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="49.0" />
                </font>
             </Label>
-            <Text fill="WHITE" layoutX="387.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
+            <Text fill="WHITE" layoutX="151.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
                <font>
                   <Font size="28.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="341.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+            <Text fill="WHITE" layoutX="133.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mot de passe">
                <font>
                   <Font size="28.0" />
                </font>
             </Text>
-            <TextField fx:id="tfUser" layoutX="511.0" layoutY="261.0">
+            <TextField fx:id="tfUser" layoutX="338.0" layoutY="254.0">
                <font>
                   <Font size="24.0" />
                </font>
             </TextField>
-            <Label layoutX="442.0" layoutY="537.0" prefHeight="31.0" prefWidth="103.0" text="Not a User?" textFill="WHITE">
+            <Label layoutX="216.0" layoutY="523.0" prefHeight="31.0" prefWidth="167.0" text="Pas encore membre ?" textFill="WHITE">
                <font>
                   <Font name="Arial Rounded MT Bold" size="14.0" />
                </font>
             </Label>
-            <Button fx:id="btnInscri" layoutX="545.0" layoutY="535.0" mnemonicParsing="false" onAction="#openSignup" style="-fx-background-color: #4bbb1a;" text="Sign up!" textFill="WHITE">
+            <Button fx:id="btnInscri" layoutX="397.0" layoutY="520.0" mnemonicParsing="false" onAction="#openSignup" style="-fx-background-color: #4bbb1a;" text="s'inscrire" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
             </Button>
-            <Button fx:id="btnLog" layoutX="581.0" layoutY="455.0" mnemonicParsing="false" onAction="#connection" prefHeight="25.0" prefWidth="129.0" style="-fx-background-color: #FED700; -fx-cursor: hand;" text="Login">
+            <Button fx:id="btnLog" layoutX="378.0" layoutY="449.0" mnemonicParsing="false" onAction="#connection" prefHeight="25.0" prefWidth="129.0" style="-fx-background-color: #FED700; -fx-cursor: hand;" text="Entrer">
                <font>
                   <Font name="Arial Rounded MT Bold" size="18.0" />
                </font>
             </Button>
-            <PasswordField fx:id="tfPass" layoutX="509.0" layoutY="344.0" prefHeight="45.0" prefWidth="295.0" />
-            <Button layoutX="699.0" layoutY="402.0" mnemonicParsing="false" onAction="#openForget" style="-fx-background-color: #345690;" text="Forgotten password?" textFill="WHITE" />
+            <PasswordField fx:id="tfPass" layoutX="340.0" layoutY="338.0" prefHeight="45.0" prefWidth="295.0" />
+            <Button layoutX="495.0" layoutY="615.0" mnemonicParsing="false" onAction="#openForget" style="-fx-background-color: #345690;" text="Mot de passe oublié?" textFill="WHITE" />
          </children>
       </AnchorPane>
    </children>
