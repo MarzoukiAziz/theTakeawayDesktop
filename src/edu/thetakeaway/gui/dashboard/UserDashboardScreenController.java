@@ -61,6 +61,12 @@ public class UserDashboardScreenController implements Initializable {
         navigateTo(actionEvent, "../commande/CommandeUserScreen.fxml");
     }
     
+    @FXML
+    private void navigateToCartes(ActionEvent actionEvent) {
+        System.out.println("sinda");
+        navigateTo(actionEvent, "../user/CarteShow.fxml");
+    }
+    
      private void navigateTo(ActionEvent actionEvent, String path) {
         try {
             Parent exercices_parent = FXMLLoader.load(getClass().getResource(path));

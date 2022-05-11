@@ -35,7 +35,7 @@ public class MainJAVAFx extends Application {
     public  void start(Stage primaryStage) {
         try {
             //Admin Panel
-            Parent root = FXMLLoader.load(getClass().getResource("../gui/dashboard/AdminDashboardScreen.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("../gui/user/LoginUser.fxml"));
             //User
             //Parent root = FXMLLoader.load(getClass().getResource("../gui/dashboard/UserDashboardScreen.fxml"));
             Scene scene = new Scene(root);

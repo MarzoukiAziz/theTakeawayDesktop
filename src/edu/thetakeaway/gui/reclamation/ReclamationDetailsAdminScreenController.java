@@ -25,6 +25,9 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.util.Duration;
+import tray.notification.NotificationType;
+import tray.notification.TrayNotification;
 
 
 public class ReclamationDetailsAdminScreenController implements Initializable {
@@ -116,6 +119,11 @@ public class ReclamationDetailsAdminScreenController implements Initializable {
         ReclamationService rs = new ReclamationService();
         rs.modifier(SharedData.selectedReclamation);
         navigateReclamationDetails(actionEvent);
+        TrayNotification tray = new TrayNotification();
+        tray.setTitle("Reclamation Fermé");
+        tray.setMessage("Reclamation Fermé avec succés");
+        tray.setNotificationType(NotificationType.SUCCESS);
+        tray.showAndDismiss(Duration.millis(3200));
     }
     @FXML
     private void delete(ActionEvent actionEvent){
