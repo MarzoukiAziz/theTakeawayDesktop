@@ -10,7 +10,7 @@ public class MailService {
     private static final String FROM = "thetakeaway.esprit@gmail.com";
     private static final String PASSWORD = "SALWA1234a&";
 
-    public static void sendMail(String destination , String subject, String body) {
+    public static void sendMail(String destination, String subject, String body) {
 
         Properties prop = new Properties();
         prop.put("mail.smtp.host", "smtp.gmail.com");
@@ -48,4 +48,3 @@ public class MailService {
     }
 
 }
-

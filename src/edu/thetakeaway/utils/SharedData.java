@@ -1,6 +1,7 @@
 package edu.thetakeaway.utils;
 
 import edu.thetakeaway.entities.Commande;
+import edu.thetakeaway.entities.Facture;
 import edu.thetakeaway.entities.Menu;
 import edu.thetakeaway.entities.Reclamation;
 import edu.thetakeaway.entities.Reservation;
@@ -14,9 +15,10 @@ import java.util.HashSet;
 public class SharedData {
 
     public static Restaurant selectedRestaurant;
+    public static Facture selectedFacture;
     public static ArrayList<Integer> tablesNumber;
     public static Table selectedTable;
-    public static User currentUser;
+    public static User currentUser ;
     public static Boolean pickMapXY = false;
     public static Reservation preparedReservation;
     public static Reclamation selectedReclamation;

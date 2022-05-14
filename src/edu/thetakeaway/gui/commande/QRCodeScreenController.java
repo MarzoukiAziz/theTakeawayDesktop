@@ -48,6 +48,54 @@ public class QRCodeScreenController implements Initializable {
     private void navigateToCommandeDetails(ActionEvent event) {
         navigateTo(event, "CommandeDetailsUserScreen.fxml");
     }
+    
+        @FXML
+    private void navigateToRestaurants(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../restaurant/RestaurantsUserScreen.fxml");
+    }
+    
+    @FXML
+    private void navigateToMenu(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../menu/MenuUserScreen.fxml");
+    }
+    
+    @FXML
+    private void navigateToPromotions(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../promotions/PromotionsUserScreen.fxml");
+    }
+
+    @FXML
+    private void navigateToDashboard(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../dashboard/UserDashboardScreen.fxml");
+    }
+    @FXML
+    private void navigateToReserve(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../reservations/ReserveScreen.fxml");
+    }
+    @FXML
+    private void navigateToReservations(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../reservations/ReservationsScreen.fxml");
+    }
+    
+    @FXML
+    private void navigateToReclamations(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../reclamation/ReclamationsScreen.fxml");
+    }
+    
+    @FXML
+    private void navigateToRCommandes(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../commande/CommandeUserScreen.fxml");
+    }
+    
+    @FXML
+    private void navigateToBlog(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../blog/blogList.fxml");
+    }
+    
+    @FXML
+    private void navigateToCartes(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../user/CarteShow.fxml");
+    }
     private void navigateTo(ActionEvent actionEvent, String path) {
         try {
             Parent exercices_parent = FXMLLoader.load(getClass().getResource(path));

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.thetakeaway.gui.stock.GestionIngredientController">
+   <children>
+      <AnchorPane prefHeight="778.0" prefWidth="1034.0" style="-fx-background-color: #030307; -fx-background-radius: 15;" stylesheets="@../../../../css/fullpackstyling.css">
+         <children>
+              <VBox prefHeight="616.0" prefWidth="89.0" style="-fx-background-color: #131022; -fx-background-radius: 15 0 0 15;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Pane prefHeight="79.0" prefWidth="97.0" style="-fx-background-radius: 15 0 15 15;" />
+                  <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#navigateToDashboard" prefHeight="66.0" prefWidth="94.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Tableau de Board" textFill="#a868a0" wrapText="true">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../assets/dashboard.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#navigateToSock" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Stock" textFill="#a868a0">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../assets/stock.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="76.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="94.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Clients" textFill="#a868a0">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../assets/customer.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="reservationsBtn" contentDisplay="TOP" layoutX="10.0" layoutY="142.0" mnemonicParsing="false" onAction="#navigateToReservations" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Réservations" textFill="#a868a0">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../assets/booking.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="287.0" mnemonicParsing="false" onAction="#navigateToCommandes" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Commandes" textFill="#a868a0">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../assets/order.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="353.0" mnemonicParsing="false" onAction="#navigateToRestaurants" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Restaurants" textFill="#a868a0">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../assets/restaurant.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="419.0" mnemonicParsing="false" onAction="#navigateToTables" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Tables" textFill="#a868a0">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../assets/table.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="485.0" mnemonicParsing="false" onAction="#navigateToMenu" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Menu" textFill="#a868a0">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../assets/menu.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+               
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="617.0" mnemonicParsing="false" onAction="#navigateToBlog" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Blog" textFill="#a868a0">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../assets/blog.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="reclamationsBtn" contentDisplay="TOP" layoutX="10.0" layoutY="683.0" mnemonicParsing="false" onAction="#navigateToReclamations" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Reclamations" textFill="#a868a0">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../assets/complain.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="716.0" mnemonicParsing="false" onAction="#navigateToPromotions" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Promotions" textFill="#a868a0">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../assets/tag.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+            <Label layoutX="173.0" layoutY="18.0" text="The TakeAway" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="56.0" fitWidth="60.0" layoutX="107.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../assets/logo2.png" />
+               </image>
+            </ImageView>
+              
+            <ImageView fitHeight="56.0" fitWidth="60.0" layoutX="107.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../assets/logo2.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="frquantite" layoutX="210.0" layoutY="297.0" />
+            <Label layoutX="102.0" layoutY="234.0" prefHeight="23.0" prefWidth="76.0" text="nom" textFill="#eee8e8">
+               <font>
+                  <Font name="Ebrima Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label contentDisplay="RIGHT" graphicTextGap="7.0" layoutX="130.0" layoutY="182.0" prefHeight="31.0" prefWidth="63.0" textFill="#f2ebeb">
+               <font>
+                  <Font name="Candara Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="103.0" layoutY="302.0" text="quantité" textFill="#eeeded">
+               <font>
+                  <Font name="Candara Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="frnom" alignment="TOP_RIGHT" layoutX="210.0" layoutY="234.0" />
+            <TableView fx:id="affichagereing" layoutX="427.0" layoutY="165.0" prefHeight="379.0" prefWidth="504.0">
+               <columns>
+                  <TableColumn fx:id="restaurantcol" prefWidth="187.0" text="Restaurant" />
+                  <TableColumn fx:id="nomcol" prefWidth="170.0" text="Nom" />
+                  <TableColumn fx:id="quantitecol" prefWidth="146.0" text="Quantite" />
+                  <TableColumn fx:id="updateCol" prefWidth="75.0" text="Mettre à jour" />
+               </columns>
+               <columnResizePolicy>
+               </columnResizePolicy>
+            </TableView>
+            <Button fx:id="supprimerfrbtn" layoutX="802.0" layoutY="602.0" mnemonicParsing="false" onAction="#supprimering" style="-fx-background-color: #FF3454;" text="Supprimer" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font></Button>
+            <ComboBox fx:id="cbresto" layoutX="210.0" layoutY="168.0" prefHeight="31.0" prefWidth="187.0" promptText="comboResto" style="-fx-background-color: #AAAAAA;" />
+            <Label layoutX="102.0" layoutY="172.0" prefHeight="22.0" prefWidth="88.0" text="Restaurant" textFill="#f5f2f2">
+               <font>
+                  <Font name="Candara Bold" size="18.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="restaurantPicker" layoutX="781.0" layoutY="120.0" prefWidth="150.0" style="-fx-background-color: #AAAAAA;" />
+            <Label layoutX="541.0" layoutY="125.0" prefHeight="22.0" prefWidth="261.0" text="vous chercher un restaurant ?" textFill="#f5f2f2">
+               <font>
+                  <Font name="Candara Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="ajoutbtn" layoutX="212.0" layoutY="374.0" mnemonicParsing="false" onAction="#ajoutering" prefHeight="31.0" prefWidth="184.0" style="-fx-background-color: #15AF15;" text="Ajouter" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Button>
+            <Button fx:id="back" layoutX="113.0" layoutY="653.0" mnemonicParsing="false" onAction="#navigateToStock" prefHeight="39.0" prefWidth="117.0" style="-fx-background-color: #FFA500;" text="back">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

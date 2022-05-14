@@ -263,9 +263,40 @@ public class ShowUserController implements Initializable {
         navigateTo(actionEvent, "ShowUser.fxml");
         
     }
+       @FXML
+    private void navigateToRestaurants(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../restaurant/RestaurantsAdminScreen.fxml");
+    }
+
+    @FXML
+    private void navigateToMenu(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../menu/MenuAdminScreen.fxml");
+    }
+
+    @FXML
+    private void navigateToPromotions(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../promotions/PromotionsAdminScreen.fxml");
+    }
+
+
+    @FXML
+    private void navigateToCommandes(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../commande/CommandeAdminScreen.fxml");
+    }
+    
      @FXML
+    private void navigateToSock(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../stock/choisirTable.fxml");
+    }
+
+    @FXML
+    private void navigateToBlog(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../blog/blogListBack.fxml");
+    }
+    
+    @FXML
     private void navigateToUsers(ActionEvent actionEvent) {
-        navigateTo(actionEvent, "ShowUser.fxml");
+        navigateTo(actionEvent, "../user/ShowUser.fxml");
     }
       private void navigateTo(ActionEvent actionEvent, String path) {
         try {

@@ -3,9 +3,23 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/marzo/Desktop/PiDevJava/theTakeawayDesktop/src/edu/thetakeaway/gui/commande/PaiementScreenController.java</file>
-            <file>file:/C:/Users/marzo/Desktop/PiDevJava/theTakeawayDesktop/src/edu/thetakeaway/gui/user/AdminDashboardScreen.fxml</file>
-            <file>file:/C:/Users/marzo/Desktop/PiDevJava/theTakeawayDesktop/src/edu/thetakeaway/utils/PaiementService.java</file>
+            <file>file:/C:/Users/marzo/Desktop/PiDevJava/theTakeawayDesktop/src/edu/thetakeaway/gui/stock/choisirTable.fxml</file>
+            <file>file:/C:/Users/marzo/Desktop/PiDevJava/theTakeawayDesktop/src/edu/thetakeaway/gui/menu/EditMenuAdminScreenController.java</file>
+            <file>file:/C:/Users/marzo/Desktop/PiDevJava/theTakeawayDesktop/src/edu/thetakeaway/gui/stock/GestionFacture.fxml</file>
+            <file>file:/C:/Users/marzo/Desktop/PiDevJava/theTakeawayDesktop/src/edu/thetakeaway/gui/user/CarteShow.fxml</file>
+            <file>file:/C:/Users/marzo/Desktop/PiDevJava/theTakeawayDesktop/src/edu/thetakeaway/gui/menu/MenuAdminScreenController.java</file>
+            <file>file:/C:/Users/marzo/Desktop/PiDevJava/theTakeawayDesktop/src/edu/thetakeaway/utils/SharedData.java</file>
+            <file>file:/C:/Users/marzo/Desktop/PiDevJava/theTakeawayDesktop/src/edu/thetakeaway/gui/restaurant/RestaurantsAdminScreen.fxml</file>
+            <file>file:/C:/Users/marzo/Desktop/PiDevJava/theTakeawayDesktop/src/edu/thetakeaway/gui/menu/MenuAdminScreen.fxml</file>
+            <file>file:/C:/Users/marzo/Desktop/PiDevJava/theTakeawayDesktop/src/edu/thetakeaway/gui/menu/NewMenuAdminScreenController.java</file>
+            <file>file:/C:/Users/marzo/Desktop/PiDevJava/theTakeawayDesktop/src/edu/thetakeaway/gui/restaurant/RestaurantsAdminScreenController.java</file>
+            <file>file:/C:/Users/marzo/Desktop/PiDevJava/theTakeawayDesktop/src/edu/thetakeaway/tests/main.java</file>
+            <file>file:/C:/Users/marzo/Desktop/PiDevJava/theTakeawayDesktop/src/edu/thetakeaway/gui/menu/EditMenuAdminScreen.fxml</file>
+            <file>file:/C:/Users/marzo/Desktop/PiDevJava/theTakeawayDesktop/src/edu/thetakeaway/gui/reclamation/ReclamationsScreen.fxml</file>
+            <file>file:/C:/Users/marzo/Desktop/PiDevJava/theTakeawayDesktop/src/edu/thetakeaway/gui/menu/MenuUserScreenController.java</file>
+            <file>file:/C:/Users/marzo/Desktop/PiDevJava/theTakeawayDesktop/src/edu/thetakeaway/gui/stock/GestionIngredient.fxml</file>
+            <file>file:/C:/Users/marzo/Desktop/PiDevJava/theTakeawayDesktop/src/edu/thetakeaway/gui/tables/TablesAdminScreen.fxml</file>
+            <file>file:/C:/Users/marzo/Desktop/PiDevJava/theTakeawayDesktop/src/edu/thetakeaway/gui/promotions/AddPromotionAdminScreen.fxml</file>
         </group>
     </open-files>
 </project-private>

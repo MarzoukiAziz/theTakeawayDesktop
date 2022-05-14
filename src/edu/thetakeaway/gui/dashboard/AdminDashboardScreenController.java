@@ -1,13 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package edu.thetakeaway.gui.dashboard;
 
 import edu.thetakeaway.entities.Reservation;
 import edu.thetakeaway.entities.Restaurant;
+import edu.thetakeaway.services.CarteServices;
 import edu.thetakeaway.services.ReservationService;
+import edu.thetakeaway.services.UserServices;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -32,13 +29,13 @@ import javafx.scene.chart.PieChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-
 
 public class AdminDashboardScreenController implements Initializable {
 
@@ -48,12 +45,70 @@ public class AdminDashboardScreenController implements Initializable {
     private Button reclamationsBtn;
     @FXML
     private Pane panne;
+    @FXML
+    private Label usersLabel;
+    @FXML
+    private TextField nbusers;
+    @FXML
+    private TextField nbusers1;
+    @FXML
+    private Button btnadd;
+    @FXML
+    private Button btnadd1;
+    @FXML
+    private Button btnadd11;
+    @FXML
+    private Label salesLabel;
+    @FXML
+    private TextField CarteNumer;
+    @FXML
+    private Label salesLabel1;
+    @FXML
+    private TextField AdmineNumer;
 
-    /**
-     * Initializes the controller class.
-     */
+    public void CountUsers() {
+        try {
+            UserServices us = new UserServices();
+            int i = 0;
+
+            i = us.NumberUsers();
+            String s = String.valueOf(i);
+            nbusers.setText(s);
+        } catch (SQLException ex) {
+        }
+    }
+
+    public void CountAdmine() {
+        try {
+            UserServices us = new UserServices();
+            int i = 0;
+
+            i = us.NumberAmin();
+            String s = String.valueOf(i);
+            AdmineNumer.setText(s);
+        } catch (SQLException ex) {
+        }
+    }
+
+    public void CountCartes() {
+        try {
+            CarteServices us = new CarteServices();
+            int i = 0;
+
+            i = us.NumberCartes();
+            String s = String.valueOf(i);
+            CarteNumer.setText(s);
+        } catch (SQLException ex) {
+
+        }
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+
+        CountAdmine();
+        CountCartes();
+        CountUsers();
         PieChart piechart = new PieChart();
         try {
             piechart.setData(getChartData());
@@ -81,7 +136,6 @@ public class AdminDashboardScreenController implements Initializable {
                     }
             );
         }
-        
 
         //BAR Chart
         ReservationService rs = new ReservationService();
@@ -156,6 +210,7 @@ public class AdminDashboardScreenController implements Initializable {
         );
 
         return list;
+
     }
 
     @FXML
@@ -175,7 +230,7 @@ public class AdminDashboardScreenController implements Initializable {
 
     @FXML
     private void navigateToDashboard(ActionEvent actionEvent) {
-        navigateTo(actionEvent, "AdminDashboardScreen.fxml");
+        navigateTo(actionEvent, "../dashboard/AdminDashboardScreen.fxml");
     }
 
     @FXML
@@ -196,6 +251,21 @@ public class AdminDashboardScreenController implements Initializable {
     @FXML
     private void navigateToCommandes(ActionEvent actionEvent) {
         navigateTo(actionEvent, "../commande/CommandeAdminScreen.fxml");
+    }
+
+    @FXML
+    private void navigateToSock(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../stock/choisirTable.fxml");
+    }
+
+    @FXML
+    private void navigateToBlog(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../blog/blogListBack.fxml");
+    }
+
+    @FXML
+    private void navigateToUsers(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../user/ShowUser.fxml");
     }
 
     private void navigateTo(ActionEvent actionEvent, String path) {

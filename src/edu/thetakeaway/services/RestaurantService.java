@@ -1,5 +1,6 @@
 package edu.thetakeaway.services;
 
+import edu.thetakeaway.entities.Ingrediant;
 import edu.thetakeaway.entities.Restaurant;
 import edu.thetakeaway.utils.DataSource;
 import java.sql.Array;
@@ -9,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 
 public class RestaurantService {
 
@@ -103,7 +105,7 @@ public class RestaurantService {
     public Restaurant getById(int id) {
         Restaurant r = null;
         try {
-            String rq = "SELECT * FROM `restaurant` where id = "+id;
+            String rq = "SELECT * FROM `restaurant` where id = " + id;
             Statement st = cnx.createStatement();
             ResultSet rs = st.executeQuery(rq);
             rs.next();
@@ -121,6 +123,28 @@ public class RestaurantService {
             System.out.println(ex);
         }
         return r;
+    }
+
+    public List<Ingrediant> getByRestaurantId(Restaurant r) {
+        List<Ingrediant> list = new ArrayList<>();
+        try {
+            String req = "Select * from ingrediant where restaurant_id = " + r.getId();
+            Statement st = cnx.createStatement();
+            ResultSet rs = st.executeQuery(req);
+            while (rs.next()) {
+                Ingrediant i = new Ingrediant();
+
+                i.setRestaurant(r);
+                i.setId(rs.getInt("id"));
+                i.setNom(rs.getString("nom"));
+                i.setQuantite(rs.getInt("quantite"));
+
+                list.add(i);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return list;
     }
 
 }

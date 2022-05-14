@@ -1,6 +1,7 @@
 
 package edu.thetakeaway.gui.dashboard;
 
+import edu.thetakeaway.utils.SharedData;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -11,6 +12,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 
@@ -28,7 +30,6 @@ public class UserDashboardScreenController implements Initializable {
         navigateTo(actionEvent, "../restaurant/RestaurantsUserScreen.fxml");
     }
     
-    @FXML
     private void navigateToMenu(ActionEvent actionEvent) {
         navigateTo(actionEvent, "../menu/MenuUserScreen.fxml");
     }
@@ -40,9 +41,8 @@ public class UserDashboardScreenController implements Initializable {
 
     @FXML
     private void navigateToDashboard(ActionEvent actionEvent) {
-        navigateTo(actionEvent, "UserDashboardScreen.fxml");
+        navigateTo(actionEvent, "../dashboard/UserDashboardScreen.fxml");
     }
-    @FXML
     private void navigateToReserve(ActionEvent actionEvent) {
         navigateTo(actionEvent, "../reservations/ReserveScreen.fxml");
     }
@@ -62,10 +62,15 @@ public class UserDashboardScreenController implements Initializable {
     }
     
     @FXML
+    private void navigateToBlog(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../blog/blogList.fxml");
+    }
+    
+    @FXML
     private void navigateToCartes(ActionEvent actionEvent) {
-        System.out.println("sinda");
         navigateTo(actionEvent, "../user/CarteShow.fxml");
     }
+    
     
      private void navigateTo(ActionEvent actionEvent, String path) {
         try {
@@ -78,4 +83,6 @@ public class UserDashboardScreenController implements Initializable {
 
         }
     }
+
+
 }

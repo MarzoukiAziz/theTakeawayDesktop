@@ -89,12 +89,60 @@ public class RestaurantsAdminScreenController implements Initializable {
     private void navigateToNewRestaurant(ActionEvent actionEvent){
         navigateTo(actionEvent, "NewRestaurantAdminScreen.fxml");
     }
+    @FXML
+    private void navigateToRestaurants(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../restaurant/RestaurantsAdminScreen.fxml");
+    }
 
-   @FXML
+    @FXML
+    private void navigateToMenu(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../menu/MenuAdminScreen.fxml");
+    }
+
+    @FXML
+    private void navigateToPromotions(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../promotions/PromotionsAdminScreen.fxml");
+    }
+
+    @FXML
     private void navigateToDashboard(ActionEvent actionEvent) {
         navigateTo(actionEvent, "../dashboard/AdminDashboardScreen.fxml");
     }
 
+    @FXML
+    private void navigateToTables(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../tables/TablesAdminScreen.fxml");
+    }
+
+    @FXML
+    private void navigateToReservations(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../reservations/ReservationsAdminScreen.fxml");
+    }
+
+    @FXML
+    private void navigateToReclamations(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../reclamation/ReclamationsAdminScreen.fxml");
+    }
+
+    @FXML
+    private void navigateToCommandes(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../commande/CommandeAdminScreen.fxml");
+    }
+    
+     @FXML
+    private void navigateToSock(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../stock/choisirTable.fxml");
+    }
+
+    @FXML
+    private void navigateToBlog(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../blog/blogListBack.fxml");
+    }
+    
+    @FXML
+    private void navigateToUsers(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../user/ShowUser.fxml");
+    }
     private void navigateTo(ActionEvent actionEvent, String path) {
         try {
             Parent exercices_parent = FXMLLoader.load(getClass().getResource(path));

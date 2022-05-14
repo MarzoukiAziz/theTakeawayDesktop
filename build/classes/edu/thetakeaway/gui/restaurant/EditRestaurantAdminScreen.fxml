@@ -16,19 +16,11 @@
    <children>
       <AnchorPane prefHeight="818.0" prefWidth="1074.0" style="-fx-background-color: #030307; -fx-background-radius: 15;">
          <children>
-            <Pane layoutX="590.0" layoutY="-1.0" prefHeight="93.0" prefWidth="405.0" style="-fx-background-radius: 20 20 0 0;" styleClass="linear-grad">
-               <children>
-                  <Label layoutX="206.0" layoutY="21.0" text="Deconnexion" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="18.0" />
-                     </font>
-                  </Label>
-               </children>
-            </Pane>
-            <VBox prefHeight="616.0" prefWidth="89.0" style="-fx-background-color: #131022; -fx-background-radius: 15 0 0 15;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            
+        <VBox prefHeight="616.0" prefWidth="89.0" style="-fx-background-color: #131022; -fx-background-radius: 15 0 0 15;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <Pane prefHeight="79.0" prefWidth="97.0" style="-fx-background-radius: 15 0 15 15;" />
-                  <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="66.0" prefWidth="94.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Tableau de Board" textFill="#a868a0" wrapText="true">
+                  <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#navigateToDashboard" prefHeight="66.0" prefWidth="94.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Tableau de Board" textFill="#a868a0" wrapText="true">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -40,7 +32,7 @@
                         <Font size="9.0" />
                      </font>
                   </Button>
-                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Stock" textFill="#a868a0">
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#navigateToSock" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Stock" textFill="#a868a0">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -49,7 +41,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="76.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="94.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Clients" textFill="#a868a0">
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="76.0" mnemonicParsing="false" onAction="#navigateToUsers" prefHeight="66.0" prefWidth="94.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Clients" textFill="#a868a0">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -58,7 +50,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="reservationsBtn" contentDisplay="TOP" layoutX="10.0" layoutY="142.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Réservations" textFill="#a868a0">
+                  <Button fx:id="reservationsBtn" contentDisplay="TOP" layoutX="10.0" layoutY="142.0" mnemonicParsing="false" onAction="#navigateToReservations" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Réservations" textFill="#a868a0">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -70,7 +62,7 @@
                         <Font size="12.0" />
                      </font>
                   </Button>
-                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="287.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Commandes" textFill="#a868a0">
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="287.0" mnemonicParsing="false" onAction="#navigateToCommandes" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Commandes" textFill="#a868a0">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -82,7 +74,7 @@
                         <Font size="12.0" />
                      </font>
                   </Button>
-                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="353.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Restaurants" textFill="#a868a0">
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="353.0" mnemonicParsing="false" onAction="#navigateToRestaurants" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Restaurants" textFill="#a868a0">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -94,7 +86,7 @@
                         <Font size="12.0" />
                      </font>
                   </Button>
-                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="419.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Tables" textFill="#a868a0">
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="419.0" mnemonicParsing="false" onAction="#navigateToTables" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Tables" textFill="#a868a0">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -106,7 +98,7 @@
                         <Font size="12.0" />
                      </font>
                   </Button>
-                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="485.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Menu" textFill="#a868a0">
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="485.0" mnemonicParsing="false" onAction="#navigateToMenu" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Menu" textFill="#a868a0">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -118,19 +110,8 @@
                         <Font size="12.0" />
                      </font>
                   </Button>
-                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="551.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Articles" textFill="#a868a0">
-                     <graphic>
-                        <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../../assets/article.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <font>
-                        <Font size="12.0" />
-                     </font>
-                  </Button>
-                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="617.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Blog" textFill="#a868a0">
+              
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="617.0" mnemonicParsing="false" onAction="#navigateToBlog" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Blog" textFill="#a868a0">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -142,7 +123,7 @@
                         <Font size="12.0" />
                      </font>
                   </Button>
-                  <Button fx:id="reclamationsBtn" contentDisplay="TOP" layoutX="10.0" layoutY="683.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Reclamations" textFill="#a868a0">
+                  <Button fx:id="reclamationsBtn" contentDisplay="TOP" layoutX="10.0" layoutY="683.0" mnemonicParsing="false" onAction="#navigateToReclamations" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Reclamations" textFill="#a868a0">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -154,7 +135,7 @@
                         <Font size="12.0" />
                      </font>
                   </Button>
-                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="716.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Promotions" textFill="#a868a0">
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="716.0" mnemonicParsing="false" onAction="#navigateToPromotions" prefHeight="66.0" prefWidth="90.0" styleClass="button3" stylesheets="@../../../../css/fullpackstyling.css" text="Promotions" textFill="#a868a0">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -167,8 +148,7 @@
                      </font>
                   </Button>
                </children>
-            </VBox>
-            <Label layoutX="173.0" layoutY="18.0" text="Admin Panel" textFill="WHITE">
+            </VBox>    <Label layoutX="173.0" layoutY="18.0" text="Admin Panel" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="27.0" />
                </font>

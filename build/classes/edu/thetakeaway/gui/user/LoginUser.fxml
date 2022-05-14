@@ -16,27 +16,7 @@
       <AnchorPane onMouseClicked="#openForget" prefHeight="724.0" prefWidth="1051.0" style="-fx-background-color: #030307; -fx-background-radius: 15;">
          <children>
             <Pane layoutX="590.0" layoutY="-1.0" prefHeight="93.0" prefWidth="405.0" style="-fx-background-radius: 20 20 0 0;" styleClass="linear-grad" />
-            <Label layoutX="222.0" layoutY="59.0" text="The TakeAway" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="27.0" />
-               </font>
-            </Label>
-            <ImageView fitHeight="56.0" fitWidth="60.0" layoutX="127.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../assets/logo2.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="672.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../assets/user.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="352.0" layoutY="121.0" prefHeight="71.0" prefWidth="298.0" text="Se connecter" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="49.0" />
-               </font>
-            </Label>
-            <Text fill="WHITE" layoutX="151.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
+            <Text fill="WHITE" layoutX="133.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
                <font>
                   <Font size="28.0" />
                </font>
@@ -46,7 +26,7 @@
                   <Font size="28.0" />
                </font>
             </Text>
-            <TextField fx:id="tfUser" layoutX="338.0" layoutY="254.0">
+            <TextField fx:id="tfUser" layoutX="338.0" layoutY="254.0" prefHeight="51.0" prefWidth="562.0">
                <font>
                   <Font size="24.0" />
                </font>
@@ -66,9 +46,24 @@
                   <Font name="Arial Rounded MT Bold" size="18.0" />
                </font>
             </Button>
-            <PasswordField fx:id="tfPass" layoutX="340.0" layoutY="338.0" prefHeight="45.0" prefWidth="295.0" />
+            <PasswordField fx:id="tfPass" layoutX="340.0" layoutY="338.0" prefHeight="45.0" prefWidth="562.0" />
             <Button layoutX="495.0" layoutY="615.0" mnemonicParsing="false" onAction="#openForget" style="-fx-background-color: #345690;" text="Mot de passe oublié?" textFill="WHITE" />
+            <Label layoutX="391.0" layoutY="95.0" prefHeight="81.0" prefWidth="325.0" text="Se connecter" textFill="#fed700">
+               <font>
+                  <Font name="Segoe Print Bold" size="45.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
+      <Label layoutX="138.0" layoutY="49.0" text="The TakeAway" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="56.0" fitWidth="60.0" layoutX="57.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../assets/logo2.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

@@ -23,21 +23,6 @@
                   <Pane layoutX="10.0" layoutY="10.0" prefHeight="79.0" prefWidth="97.0" style="-fx-background-radius: 15 0 15 15;" />
                </children>
             </VBox>
-            <Label layoutX="222.0" layoutY="59.0" text="The TakeAway" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="27.0" />
-               </font>
-            </Label>
-            <ImageView fitHeight="56.0" fitWidth="60.0" layoutX="127.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../assets/logo2.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="483.0" layoutY="72.0" prefHeight="61.0" prefWidth="413.0" text="Reset Password" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="49.0" />
-               </font>
-            </Label>
             <Text fill="WHITE" layoutX="386.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Num-tel">
                <font>
                   <Font name="Arial Bold" size="20.0" />
@@ -94,7 +79,22 @@
                </font>
             </Text>
             <TextField fx:id="mailcode" layoutX="510.0" layoutY="476.0" prefHeight="44.0" prefWidth="300.0" />
+            <Label layoutX="500.0" layoutY="74.0" prefHeight="81.0" prefWidth="511.0" text="Mot de passe oublié" textFill="#fed700">
+               <font>
+                  <Font name="Segoe Print Bold" size="45.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
+      <Label layoutX="148.0" layoutY="59.0" text="The TakeAway" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="56.0" fitWidth="60.0" layoutX="67.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../assets/logo2.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

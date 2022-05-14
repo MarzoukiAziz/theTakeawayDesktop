@@ -189,18 +189,60 @@ public class TablesAdminScreenController implements Initializable {
     }
 
     //Navigation
+    
+      @FXML
+    private void navigateToRestaurants(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../restaurant/RestaurantsAdminScreen.fxml");
+    }
+
+    @FXML
+    private void navigateToMenu(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../menu/MenuAdminScreen.fxml");
+    }
+
+    @FXML
+    private void navigateToPromotions(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../promotions/PromotionsAdminScreen.fxml");
+    }
+
+    @FXML
+    private void navigateToDashboard(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../dashboard/AdminDashboardScreen.fxml");
+    }
+
     @FXML
     private void navigateToTables(ActionEvent actionEvent) {
-        navigateTo(actionEvent, "TablesAdminScreen.fxml");
+        navigateTo(actionEvent, "../tables/TablesAdminScreen.fxml");
     }
 
     @FXML
     private void navigateToReservations(ActionEvent actionEvent) {
         navigateTo(actionEvent, "../reservations/ReservationsAdminScreen.fxml");
     }
+
     @FXML
-    private void navigateToDashboard(ActionEvent actionEvent) {
-        navigateTo(actionEvent, "../dashboard/AdminDashboardScreen.fxml");
+    private void navigateToReclamations(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../reclamation/ReclamationsAdminScreen.fxml");
+    }
+
+    @FXML
+    private void navigateToCommandes(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../commande/CommandeAdminScreen.fxml");
+    }
+    
+     @FXML
+    private void navigateToSock(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../stock/choisirTable.fxml");
+    }
+
+    @FXML
+    private void navigateToBlog(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../blog/blogListBack.fxml");
+    }
+    
+    @FXML
+    private void navigateToUsers(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../user/ShowUser.fxml");
     }
     @FXML
     private void navigateToNewTable(ActionEvent actionEvent) {

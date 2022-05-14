@@ -117,6 +117,37 @@ public class ReclamationDetailsScreenController implements Initializable {
         navigateTo(actionEvent, "../reservations/ReservationsScreen.fxml");
     }
     
+        @FXML
+    private void navigateToRestaurants(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../restaurant/RestaurantsUserScreen.fxml");
+    }
+    
+    @FXML
+    private void navigateToMenu(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../menu/MenuUserScreen.fxml");
+    }
+    
+    @FXML
+    private void navigateToPromotions(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../promotions/PromotionsUserScreen.fxml");
+    }
+
+    
+    @FXML
+    private void navigateToRCommandes(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../commande/CommandeUserScreen.fxml");
+    }
+    
+    @FXML
+    private void navigateToBlog(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../blog/blogList.fxml");
+    }
+    
+    @FXML
+    private void navigateToCartes(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../user/CarteShow.fxml");
+    }
+    
     private void navigateTo(ActionEvent actionEvent, String path) {
         try {
             Parent exercices_parent = FXMLLoader.load(getClass().getResource(path));

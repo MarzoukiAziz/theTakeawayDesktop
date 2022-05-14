@@ -92,6 +92,42 @@ public class RestaurantDetailsUserScreenController implements Initializable {
     private void navigateToMenu(ActionEvent actionEvent){
         navigateTo(actionEvent,"../menu/MenuUserScreen.fxml");
     }
+    
+    
+    @FXML
+    private void navigateToPromotions(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../promotions/PromotionsUserScreen.fxml");
+    }
+
+    @FXML
+    private void navigateToDashboard(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../dashboard/UserDashboardScreen.fxml");
+    }
+    
+    @FXML
+    private void navigateToReservations(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../reservations/ReservationsScreen.fxml");
+    }
+    
+    @FXML
+    private void navigateToReclamations(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../reclamation/ReclamationsScreen.fxml");
+    }
+    
+    @FXML
+    private void navigateToRCommandes(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../commande/CommandeUserScreen.fxml");
+    }
+    
+    @FXML
+    private void navigateToBlog(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../blog/blogList.fxml");
+    }
+    
+    @FXML
+    private void navigateToCartes(ActionEvent actionEvent) {
+        navigateTo(actionEvent, "../user/CarteShow.fxml");
+    }
 
     private void navigateTo(ActionEvent actionEvent, String path) {
         try {

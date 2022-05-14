@@ -135,7 +135,7 @@ public class LoginUserController implements Initializable {
                     tray.setNotificationType(NotificationType.SUCCESS);
                     tray.showAndDismiss(Duration.millis(1000));
 
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminDashboardScreen.fxml"));
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../dashboard/AdminDashboardScreen.fxml"));
 
                     Parent root = loader.load();
                     tfUser.getScene().setRoot(root);
@@ -145,9 +145,6 @@ public class LoginUserController implements Initializable {
                     us1 = c1.getByEmail(email);
 
                     da.CurrentUserId = us1.getId();
-                    System.out.println("-------------ID User-------");
-                    System.out.println(da.CurrentUserId);
-                    System.out.println("-------------ID User-------");
 
                 }
 
