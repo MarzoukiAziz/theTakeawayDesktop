@@ -1,4 +1,3 @@
-Certainly! Here’s an overview of the project:
 
 ### Project Overview
 
